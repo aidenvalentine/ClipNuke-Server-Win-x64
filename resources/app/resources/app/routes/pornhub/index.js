@@ -1,10 +1,9 @@
 var pornhub = require('express').Router({ mergeParams: true });
-// var sales = require('./sales')
-// var ftp = require('./ftp')
+var path = require('path')
 var bodyParser = require('body-parser')
 var jsonParser = bodyParser.json()
 
-// clips4sale Helper
+// Helper
 const ph = require('./phHelper.js');
 
 const conf = require(path.join(process.env.APPDATA, "clipnuke", "config.json"));
@@ -20,7 +19,7 @@ pornhub.get('/', (req, res) => {
   res.status(200).json({ message: 'Pornhub Router!' });
 });
 
-// route to trigger the capture
+// Creates a new video
 pornhub.post('/uploads', jsonParser, function (req, res) {
   var event = req.body;
   console.log(JSON.stringify(event, null, 2)); // Mock
@@ -40,7 +39,5 @@ pornhub.post('/uploads', jsonParser, function (req, res) {
     });
   });
 });
-
-// xvideos.use('/ftp', ftp);
 
 module.exports = pornhub;
