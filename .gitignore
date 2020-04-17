@@ -1,0 +1,9 @@
+resources\app\node_modules*
+resources\app\resources\app\node_modules*
+dist\nsis-web\*
+dist\win-unpacked\*
+dist*
+dist\*
+node_modules*
+*.log
+.git

@@ -1,0 +1,6 @@
+owner: aidenvalentine
+repo: ClipNuke-Desktop-Win-x64
+provider: github
+updaterCacheDirName: clipnuke-updater
+publisherName:
+  - ClipNuke

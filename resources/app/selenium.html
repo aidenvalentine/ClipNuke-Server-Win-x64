@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>File Uploader - ClipNuke.com</title>
+    <!-- Start of electron code -->
+	<script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+    <!-- End of electron code -->
+	<script
+		src="https://code.jquery.com/jquery-3.4.1.min.js"
+		integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+		crossorigin="anonymous" onload="window.$ = window.jQuery = module.exports;"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone-amd-module.min.js" integrity="sha256-resMHNTFeF3aRsPgzKyH1bIwSmB4dUlHGTE5nfldZLI=" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.css" integrity="sha256-e47xOkXs1JXFbjjpoRr1/LhVcqSzRmGmPqsrUQeVs+g=" crossorigin="anonymous" />
+  </head>
+  <body>
+	<!-- Image and text -->
+	<nav class="navbar navbar-light bg-light">
+	  <a class="navbar-brand" href="#">
+		<img src="./images/clipnuke-logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
+		ClipNuke
+	  </a>
+	  <a class="" href="https://clipnuke.com/wp-admin/">Login</a>
+	  <a class="" href="./test.html">Test</a>
+	</nav>
+	<div class="container">
+		<!-- All of the Node.js APIs are available in this renderer process. -->
+	<!--     We are using Node.js <script>document.write(process.versions.node)</script>,
+		Chromium <script>document.write(process.versions.chrome)</script>,
+		and Electron <script>document.write(process.versions.electron)</script>. -->
+		<form class="form-horizontal">
+		<fieldset>
+
+		<!-- Form Name -->
+		<legend>Distribute Clips</legend>
+
+		<!-- Button -->
+		<div class="form-group">
+		  <label class="col-md-8 control-label" for="trailer_upload_btn"></label>
+		  <div class="col-md-8">
+			<button id="trailer_upload_btn" name="trailer_upload_btn" class="btn btn-primary" onClick="wdio();">Upload</button>
+		  </div>
+		</div>
+
+		</fieldset>
+		</form>
+	</div>
+    <script>
+	// You can also require other files to run in this process
+	require('./renderer.js')
+    </script>
+	<script>
+	function wdio() {
+		var webdriverio = require('webdriverio');
+		var options = {
+			port: 4445,
+			desiredCapabilities: {
+					browserName: 'chrome' 
+					chromeOptions: {binary: './bin/chromedriver.exe'}
+				}
+		};
+		var driver = webdriverio.remote(options);
+		driver.url('http://localhost');
+	}
+	</script>
+    <!-- Start of electron code -->
+	<script>if (window.module) module = window.module;</script>
+    <!-- End of electron code -->
+  </body>
+</html>

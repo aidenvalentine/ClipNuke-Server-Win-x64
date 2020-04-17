@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Settings | ClipNuke</title>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <!-- Insert this line above script imports  -->
+        <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+        <script
+          src="https://code.jquery.com/jquery-3.4.1.min.js"
+          integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+          crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <!-- Insert this line after script imports -->
+        <script>if (window.module) module = window.module;</script>
+    </head>
+    <body class="container-fluid">
+      <h1>Settings</h1>
+      <form class="form-horizontal" id="settings">
+      <fieldset>
+
+      <!-- Form Name -->
+      <legend>Clips4Sale</legend>
+
+      <!-- Text input-->
+      <div class="form-group">
+        <label class="col-md-12 control-label" for="c4s-user">Username</label>
+        <div class="col-md-12">
+        <input id="c4s-user" name="c4s-user" type="text" placeholder="" class="form-control input-sm">
+
+        </div>
+        <label class="col-md-12 control-label" for="c4s-pass">Password</label>
+        <div class="col-md-12">
+          <input id="c4s-pass" name="c4s-pass" type="password" placeholder="" class="form-control input-sm">
+
+        </div>
+        <label class="col-md-12 control-label" for="c4s-phpsessid">PHPSESSID</label>
+        <div class="col-md-12">
+          <input id="c4s-phpsessid" name="c4s-phpsessid" type="password" placeholder="" class="form-control input-sm">
+
+        </div>
+      </div>
+
+      </fieldset>
+      <fieldset>
+
+      <!-- Form Name -->
+      <legend>PornHub</legend>
+
+      <!-- Text input-->
+      <div class="form-group">
+        <label class="col-md-12 control-label" for="ph-user">Username</label>
+        <div class="col-md-12">
+          <input id="ph-user" name="ph-user" type="text" placeholder="" class="form-control input-sm">
+        </div>
+        <label class="col-md-12 control-label" for="ph-pass">Password</label>
+        <div class="col-md-12">
+          <input id="ph-pass" name="ph-pass" type="password" placeholder="" class="form-control input-sm">
+        </div>
+        <label class="col-md-12 control-label" for="ph-phpsessid">PHPSESSID</label>
+        <div class="col-md-12">
+          <input id="ph-phpsessid" name="ph-phpsessid" type="password" placeholder="" class="form-control input-sm">
+        </div>
+      </div>
+
+      </fieldset>
+      <fieldset>
+
+      <!-- Form Name -->
+      <legend>XVideos</legend>
+
+      <!-- Text input-->
+      <div class="form-group">
+        <label class="col-md-12 control-label" for="xv-user">Username</label>
+        <div class="col-md-12">
+        <input id="xv-user" name="xv-user" type="text" placeholder="" class="form-control input-sm">
+
+        </div>
+      </div>
+
+      <!-- Password input-->
+      <div class="form-group">
+        <label class="col-md-12 control-label" for="xv-pass">Password</label>
+        <div class="col-md-12">
+          <input id="xv-pass" name="xv-pass" type="password" placeholder="" class="form-control input-sm">
+
+        </div>
+      </div>
+
+      </fieldset>
+      <fieldset>
+
+      <!-- Form Name -->
+      <legend>ManyVids</legend>
+
+      <!-- Text input-->
+      <div class="form-group">
+        <label class="col-md-12 control-label" for="mv-user">Username</label>
+        <div class="col-md-12">
+        <input id="mv-user" name="mv-user" type="text" placeholder="" class="form-control input-sm">
+
+        </div>
+      </div>
+
+      <!-- Password input-->
+      <div class="form-group">
+        <label class="col-md-12 control-label" for="mv-pass">Password</label>
+        <div class="col-md-12">
+          <input id="mv-pass" name="mv-pass" type="password" placeholder="" class="form-control input-sm">
+
+        </div>
+      </div>
+
+      </fieldset>
+      <fieldset>
+
+      <!-- Form Name -->
+      <legend>WooCommerce</legend>
+
+      <!-- Text input-->
+      <div class="form-group">
+        <label class="col-md-12 control-label" for="wc-site-url">Site URL</label>
+        <div class="col-md-12">
+          <input id="wc-site-url" name="wc-site-url" type="text" placeholder="" class="form-control input-sm">
+        </div>
+        <label class="col-md-12 control-label" for="wc-consumer-key">Consumer Key</label>
+        <div class="col-md-12">
+          <input id="wc-consumer-key" name="wc-consumer-key" type="text" placeholder="" class="form-control input-sm">
+        </div>
+        <label class="col-md-12 control-label" for="wc-consumer-secret">	Consumer Secret</label>
+        <div class="col-md-12">
+          <input id="wc-consumer-secret" name="wc-consumer-secret" type="password" placeholder="" class="form-control input-sm">
+        </div>
+        <label class="col-md-12 control-label" for="wc-version">API Version</label>
+        <div class="col-md-12">
+          <input id="wc-version" name="wc-version" type="text" placeholder="wc/v3" class="form-control input-sm">
+        </div>
+      </div>
+
+      </fieldset>
+      <fieldset>
+
+      <!-- Form Name -->
+      <legend>AEBN</legend>
+
+      <!-- Text input-->
+      <div class="form-group">
+        <label class="col-md-12 control-label" for="aebn-user">Username</label>
+        <div class="col-md-12">
+        <input id="aebn-user" name="aebn-user" type="text" placeholder="" class="form-control input-sm">
+
+        </div>
+      </div>
+
+      <!-- Password input-->
+      <div class="form-group">
+        <label class="col-md-12 control-label" for="aebn-pass">Password</label>
+        <div class="col-md-12">
+          <input id="aebn-pass" name="aebn-pass" type="password" placeholder="" class="form-control input-sm">
+
+        </div>
+      </div>
+
+      </fieldset>
+      <fieldset>
+
+      <!-- Form Name -->
+      <legend>AdultEmpire</legend>
+
+      <!-- Text input-->
+      <div class="form-group">
+        <label class="col-md-12 control-label" for="ae-user">Username</label>
+        <div class="col-md-12">
+        <input id="ae-user" name="ae-user" type="text" placeholder="" class="form-control input-sm">
+
+        </div>
+      </div>
+
+      <!-- Password input-->
+      <div class="form-group">
+        <label class="col-md-12 control-label" for="ae-pass">Password</label>
+        <div class="col-md-12">
+          <input id="ae-pass" name="ae-pass" type="password" placeholder="" class="form-control input-sm">
+
+        </div>
+      </div>
+
+      </fieldset>
+      <fieldset>
+
+      <!-- Form Name -->
+      <legend>Hot Movies</legend>
+
+      <!-- Text input-->
+      <div class="form-group">
+        <label class="col-md-12 control-label" for="hm-user">Username</label>
+        <div class="col-md-12">
+          <input id="hm-user" name="hm-user" type="text" placeholder="" class="form-control input-sm">
+        </div>
+        <label class="col-md-12 control-label" for="hm-pass">Password</label>
+        <div class="col-md-12">
+          <input id="hm-pass" name="hm-pass" type="password" placeholder="" class="form-control input-sm">
+        </div>
+      </div>
+
+      </fieldset>
+      <fieldset>
+
+      <!-- Form Name -->
+      <legend>Google</legend>
+
+      <!-- Text input-->
+      <div class="form-group">
+        <label class="col-md-12 control-label" for="google-api-key">API Key</label>
+        <div class="col-md-12">
+          <input id="google-api-key" name="google-api-key" type="text" placeholder="" class="form-control input-sm">
+        </div>
+      </div>
+
+      </fieldset>
+      <fieldset>
+
+      <!-- Form Name -->
+      <legend>Azure</legend>
+
+      <!-- Text input-->
+      <div class="form-group">
+        <label class="col-md-12 control-label" for="azure-api-key">API Key</label>
+        <div class="col-md-12">
+          <input id="azure-api-key" name="azure-api-key" type="text" placeholder="" class="form-control input-sm">
+        </div>
+      </div>
+
+      </fieldset>
+      <fieldset>
+
+      <!-- Form Name -->
+      <legend>S3 Storage</legend>
+
+      <!-- Text input-->
+      <div class="form-group">
+        <label class="col-md-12 control-label" for="s3-endpoint">Endpoint</label>
+        <div class="col-md-12">
+          <input id="s3-endpoint" name="s3-endpoint" type="text" placeholder="" class="form-control input-sm">
+        </div>
+        <label class="col-md-12 control-label" for="s3-port">Port</label>
+        <div class="col-md-12">
+          <input id="s3-port" name="s3-port" type="text" placeholder="" class="form-control input-sm">
+        </div>
+        <label class="col-md-12 control-label" for="s3-access-key">Access Key</label>
+        <div class="col-md-12">
+          <input id="s3-access-key" name="s3-access-key" type="text" placeholder="" class="form-control input-sm">
+        </div>
+        <label class="col-md-12 control-label" for="s3-secret-key">Secret Key</label>
+        <div class="col-md-12">
+          <input id="s3-secret-key" name="s3-secret-key" type="password" placeholder="" class="form-control input-sm">
+        </div>
+      </div>
+
+      </fieldset>
+      <fieldset>
+
+      <!-- Form Name -->
+      <legend>FFMPEG</legend>
+
+      <!-- Text input-->
+      <div class="form-group">
+        <label class="col-md-12 control-label" for="ffmpeg-watermark-hd">Watermark (1920x1080) (16:9)</label>
+        <div class="col-md-12">
+          <input id="ffmpeg-watermark-hd" name="ffmpeg-watermark-hd" type="text" placeholder="" class="form-control input-sm">
+        </div>
+        <label class="col-md-12 control-label" for="ffmpeg-watermark-sd-mp4">Watermark (720x480)</label>
+        <div class="col-md-12">
+          <input id="ffmpeg-watermark-sd-mp4" name="ffmpeg-watermark-sd-mp4" type="text" placeholder="" class="form-control input-sm">
+        </div>
+        <label class="col-md-12 control-label" for="ffmpeg-watermark-sd-wmv">Watermark (854x480)</label>
+        <div class="col-md-12">
+          <input id="ffmpeg-watermark-sd-wmv" name="ffmpeg-watermark-sd-wmv" type="text" placeholder="" class="form-control input-sm">
+        </div>
+      </div>
+
+      </fieldset>
+      <input type="submit" onclick="saveSettings();">
+
+      </form>
+    </body>
+    <script>
+    const Store = require('electron-store');
+    const store = new Store();
+
+    function saveSettings() {
+      var data = {};
+      data.clips4sale = {};
+      data.clips4sale.user = $("#c4s-user").val();
+      data.clips4sale.pass = $("#c4s-pass").val();
+      data.clips4sale.phpsessid = $("#c4s-phpsessid").val();
+      data.xvideos = {};
+      data.xvideos.user = $("#xv-user").val();
+      data.xvideos.pass = $("#xv-pass").val();
+      data.xvideos.phpsessid = $("#xv-phpsessid").val();
+      data.pornhub = {};
+      data.pornhub.user = $("#ph-user").val();
+      data.pornhub.pass = $("#ph-pass").val();
+      data.pornhub.phpsessid = $("ph-phpsessid").val();
+      data.manyvids = {};
+      data.manyvids.user = $("#mv-user").val();
+      data.manyvids.pass = $("#mv-pass").val();
+      data.manyvids.phpsessid = $("#mv-phpsessid").val();
+      data.woocommerce = {};
+      data.woocommerce.site_url = $("#wc-site-url").val();
+      data.woocommerce.consumer_key = $("#wc-consumer-key").val();
+      data.woocommerce.consumer_secret = $("#wc-consumer-secret").val();
+      data.woocommerce.version = $("#wc-version").val();
+      data.manyvids.phpsessid = $("#mv-phpsessid").val();
+      data.adultempire = {};
+      data.adultempire.user = $("#ae-user").val();
+      data.adultempire.pass = $("#ae-pass").val();
+      data.hotmovies = {};
+      data.hotmovies.user = $("#hm-user").val();
+      data.hotmovies.pass = $("#hm-pass").val();
+      data.aebn = {};
+      data.aebn.user = $("#aebn-user").val();
+      data.aebn.pass = $("#aebn-pass").val();
+      data.azure = {};
+      data.azure.api_key = $("#azure-api-key").val();
+      data.google = {};
+      data.google.api_key = $("#google-api-key").val();
+      data.s3 = {};
+      data.s3.endpoint = $("#s3-endpoint").val();
+      data.s3.port = $("#s3-port").val()*1;
+      data.s3.access_key = $("#s3-access-key").val();
+      data.s3.secret_key = $("#s3-secret-key").val();
+      data.ffmpeg = {};
+      data.ffmpeg.watermark = {};
+      data.ffmpeg.watermark.hd = $("#ffmpeg-watermark-hd").val();
+      data.ffmpeg.watermark.sd = {};
+      data.ffmpeg.watermark.sd.mp4 = $("#ffmpeg-watermark-sd-mp4").val();
+      data.ffmpeg.watermark.sd.wmv = $("#ffmpeg-watermark-sd-wmv").val();
+      store.set('settings', data);
+    }
+
+    // Initialize
+    var settings = store.get('settings');
+    $("#c4s-user").val(settings.clips4sale.user);
+    $("#c4s-pass").val(settings.clips4sale.pass);
+    $("#c4s-phpsessid").val(settings.clips4sale.phpsessid);
+    $("#xv-user").val(settings.xvideos.user);
+    $("#xv-pass").val(settings.xvideos.pass);
+    $("#xv-phpsessid").val(settings.xvideos.phpsessid);
+    $("#ph-user").val(settings.pornhub.user);
+    $("#ph-pass").val(settings.pornhub.pass);
+    $("#ph-phpsessid").val(settings.pornhub.phpsessid);
+    $("#mv-user").val(settings.manyvids.user);
+    $("#mv-pass").val(settings.manyvids.pass);
+    $("#mv-phpsessid").val(settings.manyvids.phpsessid);
+    $("#wc-site-url").val(settings.woocommerce.site_url);
+    $("#wc-consumer-key").val(settings.woocommerce.consumer_key);
+    $("#wc-consumer-secret").val(settings.woocommerce.consumer_secret);
+    $("#wc-version").val(settings.woocommerce.version);
+    $("#ae-user").val(settings.adultempire.user);
+    $("#ae-pass").val(settings.adultempire.pass);
+    $("#hm-user").val(settings.hotmovies.user);
+    $("#hm-pass").val(settings.hotmovies.pass);
+    $("#aebn-user").val(settings.aebn.user);
+    $("#aebn-pass").val(settings.aebn.pass);
+    $("#google-api-key").val(settings.google.api_key);
+    $("#azure-api-key").val(settings.azure.api_key);
+    $("#s3-endpoint").val(settings.s3.endpoint);
+    $("#s3-port").val(settings.s3.port);
+    $("#s3-access-key").val(settings.s3.access_key);
+    $("#s3-secret-key").val(settings.s3.secret_key);
+    $("#ffmpeg-watermark-hd").val(settings.ffmpeg.watermark.hd);
+    $("#ffmpeg-watermark-sd-mp4").val(settings.ffmpeg.watermark.sd.mp4);
+    $("#ffmpeg-watermark-sd-wmv").val(settings.ffmpeg.watermark.sd.wmv);
+    </script>
+</html>
