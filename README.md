@@ -3,8 +3,6 @@ ClipNuke Server provides adult content creators with a REST API, and framework f
 
 The philosophy for this project is to allow adult content creators to reduce the amount of copy/pasting by posting any given clip/video to all their distributor's sites. We want to use ONE title, description, images, video files, etc. and **cross-post** it to every platform you sell content on.
 
-Some sites, like XVideos support multiple language translations. ClipNuke Server includes a multi-language translator to automatically translate your video titles into any language with a one click. You need to set a Microsoft Azure API Key in the Settings menu to enable this feature.
-
 ## Download
 Clone/download ZIP archive from https://github.com/aidenvalentine/ClipNuke-Server-Win-x64.git.
 
@@ -19,6 +17,10 @@ When you add a new clip to a platform using the ClipNuke REST API, the software:
 1. Prefills the login form.
 1. Navigates to the platform's "add clip" page.
 1. Prefills the form will all the information you provide.
+
+Some sites, like XVideos support multiple language translations. ClipNuke Server includes a multi-language translator to automatically translate your video titles into any language with a one click. You need to set a Microsoft Azure API Key in the Settings menu to enable this feature.
+
+[![](http://img.youtube.com/vi/z71oRkNRAQU/0.jpg)](http://www.youtube.com/watch?v=z71oRkNRAQU "ClipNuke Auto-Translator")
 
 **Note**: Some platforms may be completely automated, while others may require you to manually populate unsupported form fields. The browser window will stay open, awaiting your input if more information is required to post it.
 
