@@ -7,8 +7,8 @@ The philosophy for this project is to allow adult content creators to reduce the
 Clone/download ZIP archive from https://github.com/aidenvalentine/ClipNuke-Server-Win-x64.git.
 
 ## Screenshots
-![Screenshot 1](/docs/images/clipnuke-screenshot-2.png)
-![Screenshot 2](/docs/images/clipnuke-screenshot-3.png)
+![Screenshot 1](https://github.com/aidenvalentine/ClipNuke-Server-Win-x64/raw/master/docs/images/clipnuke-screenshot-2.png)
+![Screenshot 2](https://github.com/aidenvalentine/ClipNuke-Server-Win-x64/raw/master/docs/images/clipnuke-screenshot-3.png)
 
 ## How it Works
 
