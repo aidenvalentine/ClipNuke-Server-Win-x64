@@ -4,7 +4,7 @@ ClipNuke Server provides adult content creators with a REST API, and framework f
 The philosophy for this project is to allow adult content creators to reduce the amount of copy/pasting by posting any given clip/video to all their distributor's sites. We want to use ONE title, description, images, video files, etc. and **cross-post** it to every platform you sell content on.
 
 ## Download
-Clone/download ZIP archive from https://github.com/aidenvalentine/ClipNuke-Server-Win-x64.git.
+Clone/download ZIP archive from (https://github.com/aidenvalentine/ClipNuke-Server-Win-x64.git).
 
 ## Screenshots
 ![Screenshot 1](https://github.com/aidenvalentine/ClipNuke-Server-Win-x64/raw/master/docs/images/clipnuke-screenshot-2.png)
