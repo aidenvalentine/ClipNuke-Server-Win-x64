@@ -8,6 +8,10 @@ Some sites, like XVideos support multiple language translations. ClipNuke Server
 ## Download
 Clone/download ZIP archive from https://github.com/aidenvalentine/ClipNuke-Server-Win-x64.git.
 
+## Screenshots
+![Screenshot 1](/docs/images/clipnuke-screenshot-2.png)
+![Screenshot 2](/docs/images/clipnuke-screenshot-3.png)
+
 ## How it Works
 
 When you add a new clip to a platform using the ClipNuke REST API, the software:
