@@ -28,6 +28,12 @@ Some sites, like XVideos support multiple language translations. ClipNuke Server
 1. Node.js installed on your PC. [https://nodejs.org/en/download/](https://nodejs.org/en/download/)
 1. JAVA installed on your PC. Add the PATH to JAVA's executables (java.exe) to your system's PATH environment variable. [https://java.com/en/download/manual.jsp](https://java.com/en/download/manual.jsp)
 
+### Firewall/Ports
+Make sure nothing else is currently running on the following ports, or some services may fail to start.
+1. 3000/TCP - For the Clip Store API server
+1. 2000-2010/TCP - For the automated Browser Instance nodes
+1. 4444/TCP - For the automated Browser hub.
+
 ## Installation
 1. Clone this repository to your PC.
 1. Unzip and move/rename the folder to C:/Program Files/ClipNuke
