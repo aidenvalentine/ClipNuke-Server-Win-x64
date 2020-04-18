@@ -20,9 +20,7 @@ echo free %freePort%
 java.exe -jar ./selenium-server-standalone-3.8.1.jar -role node -port %freePort% -hub http://localhost:4444/grid/register -maxSession 1
 
 set ip_address_string="IPv4 Address"
-set java_path="c:/ProgramData/Oracle/Java/javapath/"
+set java_path="%ProgramFiles%/Oracle/Java/javapath/"
 echo ClipNuke Node Connection Test
 for /f "usebackq tokens=2 delims=:" %%f in (`ipconfig ^| findstr /c:%ip_address_string%`) do echo Your ClipNuke Node IP Address is: %%f
-cd c:/ProgramData/Oracle/Java/javapath/
-rem java.exe -jar ./selenium-server-standalone-3.141.59.jar -role node -hub http://localhost:4444/grid/register
-rem java.exe -jar ./selenium-server-standalone-3.8.1.jar -role -port %freePort% node -hub http://localhost:4444/grid/register -maxSession 1
+cd %ProgramFiles%/Oracle/Java/javapath/
