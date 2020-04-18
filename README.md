@@ -38,11 +38,11 @@ Some sites, like XVideos support multiple language translations. ClipNuke Server
 
 ## Getting Started
 1. Run **clipnuke.exe**
+1. Configure your settings. The config window will open the first time you run ClipNuke, or if the config.json file is empty. Add your credentials for each clip store in the Settings window. You can re-open this page anytime by using the Help > Settings link in the top menu, or by pressing F10 on the keyboard. Config file located in `%APPDATA%/clipnuke/config.json`. __This data is securely saved to a config file on your PC.__
 1. Start required services using the "Help" menu.
     1. Start hub (Press F3)
     1. Add at least one Node (Press F4)
     1. Start Adult Content API Server (Press F6)
-1. Configure your settings. The config window will open the first time you run ClipNuke, or if the config.json file is empty. Add your credentials for each clip store in the Settings window. You can re-open this page anytime by using the Help > Settings link in the top menu, or by pressing F10 on the keyboard. Config file located in `%APPDATA%/clipnuke/config.json`. __This data is securely saved to a config file on your PC.__
 
 ## Developers
 Use ClipNuke Server REST API to power your own custom applications, or to setup a custom workflow for your store(s). The API server is built on the ExpressJS framework. See which RESTful API routes are available by viewing the code in the `{root}/resources/app/resources/app/` folder.
