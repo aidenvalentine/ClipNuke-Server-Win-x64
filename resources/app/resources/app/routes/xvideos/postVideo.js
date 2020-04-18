@@ -41,14 +41,6 @@ category
   .set("Gay","upload_form_category_category_centered_category_gay")
   .set("Shemale","upload_form_category_category_centered_category_shemale");
 
-// Setup minio client
-// var minioClient = new Minio.Client({
-// 	endPoint: 's3.xxxmultimedia.com',
-// 	port: 9000,
-// 	useSSL: true,
-// 	accessKey: 'AKIAJCFDBRQGZ37BJW3Q',
-// 	secretKey: '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'
-// });
 //
 // var size = 0;
 //
