@@ -6,7 +6,7 @@
 	const path = require('path');
 	const fs = require('fs');
 	const router = require(path.join(__dirname, 'routes/'));
-	var https = require('https');
+	const https = require('https');
 	const app = express();
   const client = require('./webdriverio/client.js').client;
 
