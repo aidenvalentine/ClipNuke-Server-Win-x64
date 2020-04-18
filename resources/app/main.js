@@ -128,7 +128,7 @@ function createWindow () {
 
 	updatesWindow();
 	// autoUpdater.setFeedURL({ provider: 'github', owner: 'aidenvalentine', repo: '', token: '' });
-	autoUpdater.setFeedURL({ provider: 'github', owner: 'aidenvalentine', repo: 'ClipNuke-Server-Winx64' });
+	autoUpdater.setFeedURL({ provider: 'github', owner: 'aidenvalentine', repo: 'ClipNuke-Server-Win-x64' });
 	autoUpdater.checkForUpdates();
   autoUpdater.checkForUpdatesAndNotify();
 	setTimeout(function() {
@@ -207,18 +207,3 @@ app.setUserTasks([
     description: 'Starts API Server'
   }
 ])
-
-// mainWindow.once('ready-to-show', () => {
-//   autoUpdater.checkForUpdatesAndNotify();
-// });
-
-// autoUpdater.on('update-available', () => {
-//   mainWindow.webContents.send('update_available');
-// });
-// autoUpdater.on('update-downloaded', () => {
-//   mainWindow.webContents.send('update_downloaded');
-// });
-// autoUpdater.on('update-downloaded', (info) => {
-// 	console.log("Update Downloaded", info);
-// 	autoUpdater.quitAndInstall();
-// })

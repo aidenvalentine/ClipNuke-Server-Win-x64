@@ -8,7 +8,7 @@ builder.build({
     targets: Platform.MAC.createTarget(),
     config: {
       "provider": 'github',
-      "repo": 'ClipNuke-Server-Winx64',
+      "repo": 'ClipNuke-Server-Win-x64',
       // "owner": 'txm-nero',
       "private": false,
       // "token": '',
