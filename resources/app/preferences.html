@@ -247,6 +247,10 @@
         <div class="col-md-12">
           <input id="s3-port" name="s3-port" type="text" placeholder="" class="form-control input-sm">
         </div>
+        <label class="col-md-12 control-label" for="s3-use-ssl">SSL</label>
+        <div class="col-md-12">
+          <input id="s3-use-ssl" name="s3-use-ssl" type="checkbox" placeholder="" class="form-control input-sm" style="width:unset;">
+        </div>
         <label class="col-md-12 control-label" for="s3-access-key">Access Key</label>
         <div class="col-md-12">
           <input id="s3-access-key" name="s3-access-key" type="text" placeholder="" class="form-control input-sm">
@@ -328,6 +332,7 @@
       data.s3 = {};
       data.s3.endpoint = $("#s3-endpoint").val();
       data.s3.port = $("#s3-port").val()*1;
+      data.s3.use_ssl = $("#s3-use-ssl")[0].checked;
       data.s3.access_key = $("#s3-access-key").val();
       data.s3.secret_key = $("#s3-secret-key").val();
       data.ffmpeg = {};
@@ -367,6 +372,7 @@
     $("#azure-api-key").val(settings.azure.api_key);
     $("#s3-endpoint").val(settings.s3.endpoint);
     $("#s3-port").val(settings.s3.port);
+    $("#s3-use-ssl").prop("checked", settings.s3.use_ssl);
     $("#s3-access-key").val(settings.s3.access_key);
     $("#s3-secret-key").val(settings.s3.secret_key);
     $("#ffmpeg-watermark-hd").val(settings.ffmpeg.watermark.hd);
