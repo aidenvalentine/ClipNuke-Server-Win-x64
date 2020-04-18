@@ -11,8 +11,9 @@ Clone/download ZIP archive from [https://github.com/aidenvalentine/ClipNuke-Serv
 ![Screenshot 2](https://github.com/aidenvalentine/ClipNuke-Server-Win-x64/raw/master/docs/images/clipnuke-screenshot-3.png)
 
 ## How it Works
+You may want to use software like [Postman](https://www.postman.com/downloads/) to send GET/POST/PUT requests to the Clip Store API server. Alternatively, [clipnuke.com](https://clipnuke.com) is an app built to run alongsite ClipNuke Server. ClipNuke.com allows you to create/manage/update your video data, and provides an admin panel for your store to distribute your clips with. **Note**: ClipNuke.com is a paid service which requires a monthly subscription.
 
-When you add a new clip to a platform using the ClipNuke REST API, the software:
+When you add a new clip to a platform using the REST API, the software:
 1. Opens a new Google Chrome browser window automatically.
 1. Prefills the login form.
 1. Navigates to the platform's "add clip" page.
@@ -27,6 +28,12 @@ Some sites, like XVideos support multiple language translations. ClipNuke Server
 ## Requirements
 1. Node.js installed on your PC. [https://nodejs.org/en/download/](https://nodejs.org/en/download/)
 1. JAVA installed on your PC. Add the PATH to JAVA's executables (java.exe) to your system's PATH environment variable. [https://java.com/en/download/manual.jsp](https://java.com/en/download/manual.jsp)
+
+### Firewall/Ports
+Make sure nothing else is currently running on the following ports, or some services may fail to start.
+1. 3000/TCP - For the Clip Store API server
+1. 2000-2010/TCP - For the automated Browser Instance nodes
+1. 4444/TCP - For the automated Browser hub.
 
 ## Installation
 1. Clone this repository to your PC.
