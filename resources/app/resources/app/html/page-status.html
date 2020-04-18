@@ -166,9 +166,9 @@
                     <em>Offline</em>
                 </div>
                 <div class="clear"></div>
-                <div class="activity-item responsive" id="xxx-api">
-                    <i class="fa fa-circle color-red-light" id="xxx-status"></i>
-                    <strong>XXXMultimedia</strong>
+                <div class="activity-item responsive" id="woo-api">
+                    <i class="fa fa-circle color-red-light" id="woo-status"></i>
+                    <strong>WooCommerce</strong>
                     <em>Under Development</em>
                 </div>
                 <div class="activity-item responsive" id="mv-api">
@@ -591,7 +591,7 @@ $( document ).ready(function() {
 		checkClipnuke();
 		checkClipnukeHub();
 		checkS3();
-		checkXxxApi();
+		checkWooApi();
 		checkXvApi();
 		checkC4sApi();
 		checkApi();
@@ -779,7 +779,7 @@ $( document ).ready(function() {
 
 	/** Test clipnuke and make sure it's online */
 	function checkXxxApi(){
-		var url = "https://localhost:3000/xxxmultimedia" ;
+		var url = "https://localhost:3000/woo" ;
 		 $.ajax({
 		     url: url,
 		     type: "get",
@@ -800,15 +800,15 @@ $( document ).ready(function() {
 		     }
 		});
 		function success(){
-			console.log('XXXMultimedia API is online!');
-			$('#xxx-status').addClass('color-green-dark');
-			$('#xxx-status').removeClass('color-red-light');
-			$('#xxx-api > em')[0].innerText = "Operational";
+			console.log('WooCommerce API is online!');
+			$('#woo-status').addClass('color-green-dark');
+			$('#woo-status').removeClass('color-red-light');
+			$('#woo-api > em')[0].innerText = "Operational";
 		}
 		function failure(){
-			$('#xxx-status').removeClass('color-green-dark');
-			$('#xxx-status').addClass('color-red-light');
-			$('#xxx-api > em')[0].innerText = "Offline";
+			$('#woo-status').removeClass('color-green-dark');
+			$('#woo-status').addClass('color-red-light');
+			$('#woo-api > em')[0].innerText = "Offline";
 		}
 	}
 
@@ -848,8 +848,8 @@ $( document ).ready(function() {
 	}
 
 	/** Test clipnuke and make sure it's online */
-	function checkXxxApi(){
-		var url = "https://localhost:3000/xxxmultimedia" ;
+	function checkWooApi(){
+		var url = "https://localhost:3000/woo" ;
 		 $.ajax({
 		     url: url,
 		     type: "get",
@@ -870,15 +870,15 @@ $( document ).ready(function() {
 		     }
 		});
 		function success(){
-			console.log('XXXMultimedia API is online!');
-			$('#xxx-status').addClass('color-green-dark');
-			$('#xxx-status').removeClass('color-red-light');
-			$('#xxx-api > em')[0].innerText = "Operational";
+			console.log('WooCommerce API is online!');
+			$('#woo-status').addClass('color-green-dark');
+			$('#woo-status').removeClass('color-red-light');
+			$('#woo-api > em')[0].innerText = "Operational";
 		}
 		function failure(){
-			$('#xxx-status').removeClass('color-green-dark');
-			$('#xxx-status').addClass('color-red-light');
-			$('#xxx-api > em')[0].innerText = "Offline";
+			$('#woo-status').removeClass('color-green-dark');
+			$('#woo-status').addClass('color-red-light');
+			$('#woo-api > em')[0].innerText = "Offline";
 		}
 	}
 
@@ -905,7 +905,7 @@ $( document ).ready(function() {
 		     }
 		});
 		function success(){
-			console.log('XXXMultimedia API is online!');
+			console.log('Clips4Sale API is online!');
 			$('#c4s-status').addClass('color-green-dark');
 			$('#c4s-status').removeClass('color-red-light');
 			$('#c4s-api > em')[0].innerText = "Operational";
