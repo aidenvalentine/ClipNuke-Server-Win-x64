@@ -14,11 +14,11 @@ function auth(credentials, params, callback) {
     .init()
     .url('https://www.pornhub.com/login')
     .setCookie({
-        name: 'platform',
-        value: 'pc',
-        // The below options are optional
-        domain: '.pornhub.com', // The domain the cookie is visible to. Defaults to the current browsing context’s active document’s URL domain
-        // expiry: seconds+3600 // When the cookie expires, specified in seconds since Unix Epoch
+      name: 'platform',
+      value: 'pc',
+      // The below options are optional
+      domain: '.pornhub.com', // The domain the cookie is visible to. Defaults to the current browsing context’s active document’s URL domain
+      // expiry: seconds+3600 // When the cookie expires, specified in seconds since Unix Epoch
     })
     .waitForVisible('#username', 3000)
     .setValue('body #username', credentials.user)
@@ -39,13 +39,13 @@ function auth(credentials, params, callback) {
     // })
     // .click('#submit')
     // .pause(15000) // Wait in case we need to solve a recaptcha.
-/*     .getCookie([{"domain":"admin.clips4sale.com","httpOnly":false,"name":"PHPSESSID","path":"/","secure":false,"value":"jt0p2kiigvqdps9paqn6nqpnm8"}]).then(function(cookie) {
-	  var json = JSON.stringify(cookie);
-      console.log('Cookie is: ' + json);
-	  fs.writeFile('cookie.json', json, 'utf8', callback);
-      return cookie;
-    }) */
-    .next(function (data) {
+    /*     .getCookie([{"domain":"admin.clips4sale.com","httpOnly":false,"name":"PHPSESSID","path":"/","secure":false,"value":"jt0p2kiigvqdps9paqn6nqpnm8"}]).then(function(cookie) {
+    	  var json = JSON.stringify(cookie);
+          console.log('Cookie is: ' + json);
+    	  fs.writeFile('cookie.json', json, 'utf8', callback);
+          return cookie;
+        }) */
+    .next(function(data) {
       console.log(data);
       return callback(null, data);
     }).catch((e) => console.log(e));
@@ -59,34 +59,34 @@ function auth(credentials, params, callback) {
  */
 function postUpload(event, params, callback) {
   params.client
-  // .init()
-  /* .setCookie(params.cookie) */
-  .url('https://www.pornhub.com/upload')
-  .pause(1000)
-  .click("#videoUploadLink > span.btnLabel")
-  .waitForVisible('#videoDetailBar', 300000).pause(1000)
-  // .click('#dropDownColumn_1_0 > div.uploaderDropDownContainer')
-  // .click('#dropDownVerify_1_1 > li.alpha')
-  // .setValue('#titleTmplField_1', event.name || '').pause(100).click('#submitNewTag_0')
-  .setValue('#titleTmplField_0', event.name || '').pause(100)
-  .setValue('#tagsList_0', event.tags[0] || '').pause(100).click('#submitNewTag_0')
-  .setValue('#tagsList_0', event.tags[1] || '').pause(100).click('#submitNewTag_0')
-  .setValue('#tagsList_0', event.tags[2] || '').pause(100).click('#submitNewTag_0')
-  .setValue('#tagsList_0', event.tags[3] || '').pause(100).click('#submitNewTag_0')
-  .setValue('#tagsList_0', event.tags[4] || '').pause(100).click('#submitNewTag_0')
-  .setValue('#tagsList_0', event.tags[5] || '').pause(100).click('#submitNewTag_0')
-  .setValue('#tagsList_0', event.tags[6] || '').pause(100).click('#submitNewTag_0')
-  .setValue('#tagsList_0', event.tags[7] || '').pause(100).click('#submitNewTag_0')
-  .setValue('#tagsList_0', event.tags[8] || '').pause(100).click('#submitNewTag_0')
-  .setValue('#tagsList_0', event.tags[9] || '').pause(100).click('#submitNewTag_0')
-  .setValue('#tagsList_0', event.tags[10] || '').pause(100).click('#submitNewTag_0')
-  .setValue('#tagsList_0', event.tags[11] || '').pause(100).click('#submitNewTag_0')
-  .setValue('#tagsList_0', event.tags[12] || '').pause(100).click('#submitNewTag_0')
-  .setValue('#tagsList_0', event.tags[13] || '').pause(100).click('#submitNewTag_0')
-  .setValue('#tagsList_0', event.tags[14] || '').pause(100).click('#submitNewTag_0')
-  .setValue('#tagsList_0', event.tags[15] || '').pause(100).click('#submitNewTag_0')
-  .waitForVisible('#progressDescription_0 > a', 9000000).pause(1000)
-  .end();
+    // .init()
+    /* .setCookie(params.cookie) */
+    .url('https://www.pornhub.com/upload')
+    .pause(1000)
+    .click("#videoUploadLink > span.btnLabel")
+    .waitForVisible('#videoDetailBar', 300000).pause(1000)
+    // .click('#dropDownColumn_1_0 > div.uploaderDropDownContainer')
+    // .click('#dropDownVerify_1_1 > li.alpha')
+    // .setValue('#titleTmplField_1', event.name || '').pause(100).click('#submitNewTag_0')
+    .setValue('#titleTmplField_0', event.name || '').pause(100)
+    .setValue('#tagsList_0', event.tags[0] || '').pause(100).click('#submitNewTag_0')
+    .setValue('#tagsList_0', event.tags[1] || '').pause(100).click('#submitNewTag_0')
+    .setValue('#tagsList_0', event.tags[2] || '').pause(100).click('#submitNewTag_0')
+    .setValue('#tagsList_0', event.tags[3] || '').pause(100).click('#submitNewTag_0')
+    .setValue('#tagsList_0', event.tags[4] || '').pause(100).click('#submitNewTag_0')
+    .setValue('#tagsList_0', event.tags[5] || '').pause(100).click('#submitNewTag_0')
+    .setValue('#tagsList_0', event.tags[6] || '').pause(100).click('#submitNewTag_0')
+    .setValue('#tagsList_0', event.tags[7] || '').pause(100).click('#submitNewTag_0')
+    .setValue('#tagsList_0', event.tags[8] || '').pause(100).click('#submitNewTag_0')
+    .setValue('#tagsList_0', event.tags[9] || '').pause(100).click('#submitNewTag_0')
+    .setValue('#tagsList_0', event.tags[10] || '').pause(100).click('#submitNewTag_0')
+    .setValue('#tagsList_0', event.tags[11] || '').pause(100).click('#submitNewTag_0')
+    .setValue('#tagsList_0', event.tags[12] || '').pause(100).click('#submitNewTag_0')
+    .setValue('#tagsList_0', event.tags[13] || '').pause(100).click('#submitNewTag_0')
+    .setValue('#tagsList_0', event.tags[14] || '').pause(100).click('#submitNewTag_0')
+    .setValue('#tagsList_0', event.tags[15] || '').pause(100).click('#submitNewTag_0')
+    .waitForVisible('#progressDescription_0 > a', 9000000).pause(1000)
+    .end();
 }
 
 module.exports = {

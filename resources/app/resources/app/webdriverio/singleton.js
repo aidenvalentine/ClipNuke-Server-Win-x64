@@ -12,15 +12,14 @@ const webdriverio = require('webdriverio');
 const config = require('./config.js').config;
 
 var client;
-if(!global.instance)
-{
- var instance = {};
- instance.state = false;
- instance.func1 = function(state){
-   instance.state = state;
- };
- instance.client = webdriverio.remote(config);
- global.instance = instance;
+if (!global.instance) {
+  var instance = {};
+  instance.state = false;
+  instance.func1 = function(state) {
+    instance.state = state;
+  };
+  instance.client = webdriverio.remote(config);
+  global.instance = instance;
 }
 
 exports.instance = global.instance;

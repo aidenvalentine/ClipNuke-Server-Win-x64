@@ -1,4 +1,6 @@
-var xvideos = require('express').Router({ mergeParams: true });
+var xvideos = require('express').Router({
+  mergeParams: true
+});
 // var sales = require('./sales')
 // var ftp = require('./ftp')
 var bodyParser = require('body-parser')
@@ -18,18 +20,20 @@ const client = require('../../webdriverio/client.js').client;
 
 // Test Route
 xvideos.get('/', (req, res) => {
-  res.status(200).json({ message: 'Xvideos Router!' });
+  res.status(200).json({
+    message: 'Xvideos Router!'
+  });
 });
 
 // route to trigger the capture
-xvideos.get('/uploads', function (req, res) {
+xvideos.get('/uploads', function(req, res) {
   var id = req.params.id;
   console.log(`GET /uploads - Mock Endpoint`); // Mock
   res.json({});
 });
 
 // route to trigger the capture
-xvideos.post('/uploads', jsonParser, function (req, res) {
+xvideos.post('/uploads', jsonParser, function(req, res) {
   var event = req.body;
   console.log(`POST /uploads - Mock Endpoint`); // Mock
   console.log(JSON.stringify(event, null, 2)); // Mock
@@ -53,34 +57,34 @@ xvideos.post('/uploads', jsonParser, function (req, res) {
 xvideos.post('/spawn', jsonParser, (req, res) => {
   const event = req.body;
   var child = cp.fork(path.join(__dirname, 'postVideo.js'), [JSON.stringify(event)]);
-	// let child = spawn(
-	// 	'node',
-	// 	[
+  // let child = spawn(
+  // 	'node',
+  // 	[
   //     path.join(__dirname, 'postVideo.js'),
   //     JSON.stringify(event)
   //   ]
-	// );
-	child.on('exit', (code) => {
-	    console.log(`Child process exited with code ${code}`);
-      if (code === 0) {
-         // res.status(200).json({ message: 'WebDriverIO ran successfully.' });
-      } else {
-        // res.status(400).json({ message: 'Error code '+code });
-      }
-			// res.status(200).json({ message: 'xxxmultimedia.com Router!' });
-	});
-	child.stdout.on('data', (data) => {
-	    console.log(`stdout: ${data}`);
-			// res.status(200).json(data);
-	});
-	child.stderr.on('data', (data) => {
-	    console.log(`stderr: ${data}`);
-      // res.status(400).json(data);
-	});
+  // );
+  child.on('exit', (code) => {
+    console.log(`Child process exited with code ${code}`);
+    if (code === 0) {
+      // res.status(200).json({ message: 'WebDriverIO ran successfully.' });
+    } else {
+      // res.status(400).json({ message: 'Error code '+code });
+    }
+    // res.status(200).json({ message: 'xxxmultimedia.com Router!' });
+  });
+  child.stdout.on('data', (data) => {
+    console.log(`stdout: ${data}`);
+    // res.status(200).json(data);
+  });
+  child.stderr.on('data', (data) => {
+    console.log(`stderr: ${data}`);
+    // res.status(400).json(data);
+  });
 });
 
 // route to trigger the capture
-xvideos.get('/uploads/:id', function (req, res) {
+xvideos.get('/uploads/:id', function(req, res) {
   var id = req.params.id;
   console.log(`Requesting Upload ID: ${id}`);
   // res.json({id});
@@ -105,14 +109,14 @@ xvideos.get('/uploads/:id', function (req, res) {
 });
 
 // route to trigger the capture
-xvideos.put('/uploads/:id', function (req, res) {
+xvideos.put('/uploads/:id', function(req, res) {
   var id = req.params.id;
   console.log(`PUT /uploads/${id} - Mock Endpoint`); // Mock
   res.json({});
 });
 
 // route to trigger the capture
-xvideos.delete('/uploads/:id', function (req, res) {
+xvideos.delete('/uploads/:id', function(req, res) {
   var id = req.params.id;
   console.log(`DELETE /uploads/${id} - Mock Endpoint`); // Mock
   res.json({});

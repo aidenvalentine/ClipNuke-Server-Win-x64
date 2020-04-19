@@ -30,7 +30,7 @@ function auth(credentials, params, callback) {
     .waitForVisible('body > div.mv-profile', 30000)
     // .click('#loginAccountSubmit')
     // .pause(15000) // Wait in case we need to solve a recaptcha.
-    .next(function (data) {
+    .next(function(data) {
       console.log(data);
       return callback(null, data);
     }).catch((e) => console.log(e));
@@ -96,8 +96,8 @@ function getVid(id, params, callback) {
 
     // Price
     .getValue('[name="video_cost"]').then(function(val) {
-      console.log('Price is: ' + JSON.stringify(val*1));
-      data.price = val*1;
+      console.log('Price is: ' + JSON.stringify(val * 1));
+      data.price = val * 1;
     }).catch(function(err) {
       params.client.end(); /** Ends browser session {@link editVid| read editVids docs} */
       console.log('Local catch called');
@@ -119,25 +119,35 @@ function getVid(id, params, callback) {
 
     // Categories/"Tags"
     .getAttribute('//*[@id="videoSettings"]/div[1]/div/ul/li[1]/input', 'value').then(function(val) {
-      if(val) { data.categories.push(val); }
+      if (val) {
+        data.categories.push(val);
+      }
     })
     .getAttribute('//*[@id="videoSettings"]/div[1]/div/ul/li[2]/input', 'value').then(function(val) {
-      if(val) { data.categories.push(val); }
+      if (val) {
+        data.categories.push(val);
+      }
     })
     .getAttribute('//*[@id="videoSettings"]/div[1]/div/ul/li[3]/input', 'value').then(function(val) {
-      if(val) { data.categories.push(val); }
+      if (val) {
+        data.categories.push(val);
+      }
     })
     .getAttribute('//*[@id="videoSettings"]/div[1]/div/ul/li[4]/input', 'value').then(function(val) {
-      if(val) { data.categories.push(val); }
+      if (val) {
+        data.categories.push(val);
+      }
     })
     .getAttribute('//*[@id="videoSettings"]/div[1]/div/ul/li[5]/input', 'value').then(function(val) {
-      if(val) { data.categories.push(val); }
+      if (val) {
+        data.categories.push(val);
+      }
     })
 
     // Video Length
     .getAttribute('.js-video-length', 'data-video-length').then(function(val) {
       console.log(val);
-      if(val * 1) {
+      if (val * 1) {
         data.lengthSeconds = val * 1;
       } else {
         data.length = val;
@@ -146,24 +156,24 @@ function getVid(id, params, callback) {
 
     // Intensity
     .execute(function(obj) {
-        obj = jQuery('#intensity > option:selected')[0].value;
-        return obj;
+      obj = jQuery('#intensity > option:selected')[0].value;
+      return obj;
     }, data).then(function(obj) {
-        console.log("Intensity", obj.value);
-        data.intensity = obj.value;
+      console.log("Intensity", obj.value);
+      data.intensity = obj.value;
     })
 
     // Sale/Discount %
     .execute(function(obj) {
-        obj = jQuery('#sale > option:selected')[0].value;
-        return obj;
+      obj = jQuery('#sale > option:selected')[0].value;
+      return obj;
     }, data).then(function(obj) {
-        var discount = obj.value;
-        console.log(`Discount ${discount}`);
-        data.discount = discount;
-        if (discount) {
-          data.salePrice = data.price - ( ( discount / 100 ) * data.price );
-        }
+      var discount = obj.value;
+      console.log(`Discount ${discount}`);
+      data.discount = discount;
+      if (discount) {
+        data.salePrice = data.price - ((discount / 100) * data.price);
+      }
     })
 
     // Trailer URL
@@ -235,7 +245,7 @@ function postVid(id, data, params, callback) {
     // .setCookie(params.cookie)
     .waitForVisible('body > div.mv-profile', 30000)
     .url(`https://www.manyvids.com/Edit-vid/${id}/`)
-    .chooseFile(selector,localPath)
+    .chooseFile(selector, localPath)
     .url(`https://www.manyvids.com/Edit-vid/${id}/`)
     .pause(2000)
     // Manyvids Session Details
@@ -266,8 +276,8 @@ function postVid(id, data, params, callback) {
 
     // Price
     .getValue('[name="video_cost"]').then(function(val) {
-      console.log('Price is: ' + JSON.stringify(val*1));
-      data.price = val*1;
+      console.log('Price is: ' + JSON.stringify(val * 1));
+      data.price = val * 1;
     })
 
     // Video Title
@@ -284,25 +294,35 @@ function postVid(id, data, params, callback) {
 
     // Categories/"Tags"
     .getAttribute('//*[@id="videoSettings"]/div[1]/div/ul/li[1]/input', 'value').then(function(val) {
-      if(val) { data.categories.push(val); }
+      if (val) {
+        data.categories.push(val);
+      }
     })
     .getAttribute('//*[@id="videoSettings"]/div[1]/div/ul/li[2]/input', 'value').then(function(val) {
-      if(val) { data.categories.push(val); }
+      if (val) {
+        data.categories.push(val);
+      }
     })
     .getAttribute('//*[@id="videoSettings"]/div[1]/div/ul/li[3]/input', 'value').then(function(val) {
-      if(val) { data.categories.push(val); }
+      if (val) {
+        data.categories.push(val);
+      }
     })
     .getAttribute('//*[@id="videoSettings"]/div[1]/div/ul/li[4]/input', 'value').then(function(val) {
-      if(val) { data.categories.push(val); }
+      if (val) {
+        data.categories.push(val);
+      }
     })
     .getAttribute('//*[@id="videoSettings"]/div[1]/div/ul/li[5]/input', 'value').then(function(val) {
-      if(val) { data.categories.push(val); }
+      if (val) {
+        data.categories.push(val);
+      }
     })
 
     // Video Length
     .getAttribute('.js-video-length', 'data-video-length').then(function(val) {
       console.log(val);
-      if(val * 1) {
+      if (val * 1) {
         data.lengthSeconds = val * 1;
       } else {
         data.length = val;
@@ -311,11 +331,11 @@ function postVid(id, data, params, callback) {
 
     // Intensity
     .execute(function(obj) {
-        obj = jQuery('#intensity > option:selected')[0].value;
-        return obj;
+      obj = jQuery('#intensity > option:selected')[0].value;
+      return obj;
     }, data).then(function(obj) {
-        console.log("Intensity", obj.value);
-        data.intensity = obj.value;
+      console.log("Intensity", obj.value);
+      data.intensity = obj.value;
     })
 
     /** Local Error Callback
@@ -329,15 +349,15 @@ function postVid(id, data, params, callback) {
 
     // Sale/Discount %
     .execute(function(obj) {
-        obj = jQuery('#sale > option:selected')[0].value;
-        return obj;
+      obj = jQuery('#sale > option:selected')[0].value;
+      return obj;
     }, data).then(function(obj) {
-        var discount = obj.value;
-        console.log(`Discount ${discount}`);
-        data.discount = discount;
-        if (discount) {
-          data.salePrice = data.price - ( ( discount / 100 ) * data.price );
-        }
+      var discount = obj.value;
+      console.log(`Discount ${discount}`);
+      data.discount = discount;
+      if (discount) {
+        data.salePrice = data.price - ((discount / 100) * data.price);
+      }
     })
 
     // Trailer URL
@@ -390,7 +410,7 @@ function uploadVid(event, credentials, params, callback) {
   // var localPath = 'X:\\S3Gateway\\NeroMedia\\xxxmultimedia-downloads\\' + event.filename;
   var uploadCount;
   console.log(params);
-    client
+  client
     .init().catch(function(err, params) {
       params.client.end();
       console.log('WDIO.init() failed.');
@@ -421,7 +441,7 @@ function uploadVid(event, credentials, params, callback) {
       console.log("i.processing-upload-icon");
       return $("i.processing-upload-icon").length === 0
     }, 5000, 'expected text to be different after 5s')
-    .execute(function(){
+    .execute(function() {
       UploadComplete
     })
     // .waitForVisible("body > div.mv-controls > div.video-player-edit-page", 1800000)

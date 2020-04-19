@@ -1,4 +1,6 @@
-var pornhub = require('express').Router({ mergeParams: true });
+var pornhub = require('express').Router({
+  mergeParams: true
+});
 var path = require('path')
 var bodyParser = require('body-parser')
 var jsonParser = bodyParser.json()
@@ -16,11 +18,13 @@ const client = require('../../webdriverio/client.js').client;
 
 // Test Route
 pornhub.get('/', (req, res) => {
-  res.status(200).json({ message: 'Pornhub Router!' });
+  res.status(200).json({
+    message: 'Pornhub Router!'
+  });
 });
 
 // Creates a new video
-pornhub.post('/uploads', jsonParser, function (req, res) {
+pornhub.post('/uploads', jsonParser, function(req, res) {
   var event = req.body;
   console.log(JSON.stringify(event, null, 2)); // Mock
   // res.json({}); // Mock Response

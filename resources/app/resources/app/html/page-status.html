@@ -1,212 +1,217 @@
 <!DOCTYPE HTML>
+
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0 minimal-ui" />
-<meta name="apple-mobile-web-app-capable" content="yes" />
-<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0 minimal-ui" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
 
-<link rel="icon" type="image/png" href="images/splash/android-chrome-192x192.png" sizes="192x192">
-<link rel="apple-touch-icon" sizes="196x196" href="images/splash/apple-touch-icon-196x196.png">
-<link rel="apple-touch-icon" sizes="180x180" href="images/splash/apple-touch-icon-180x180.png">
-<link rel="apple-touch-icon" sizes="152x152" href="images/splash/apple-touch-icon-152x152.png">
-<link rel="apple-touch-icon" sizes="144x144" href="images/splash/apple-touch-icon-144x144.png">
-<link rel="apple-touch-icon" sizes="120x120" href="images/splash/apple-touch-icon-120x120.png">
-<link rel="apple-touch-icon" sizes="114x114" href="images/splash/apple-touch-icon-114x114.png">
-<link rel="apple-touch-icon" sizes="76x76" href="images/splash/apple-touch-icon-76x76.png">
-<link rel="apple-touch-icon" sizes="72x72" href="images/splash/apple-touch-icon-72x72.png">
-<link rel="apple-touch-icon" sizes="60x60" href="images/splash/apple-touch-icon-60x60.png">
-<link rel="apple-touch-icon" sizes="57x57" href="images/splash/apple-touch-icon-57x57.png">
-<link rel="icon" type="image/png" href="images/splash/favicon-96x96.png" sizes="96x96">
-<link rel="icon" type="image/png" href="images/splash/favicon-32x32.png" sizes="32x32">
-<link rel="icon" type="image/png" href="images/splash/favicon-16x16.png" sizes="16x16">
-<link rel="shortcut icon" href="images/splash/favicon.ico" type="image/x-icon" />
-<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
+	<link rel="icon" type="image/png" href="images/splash/android-chrome-192x192.png" sizes="192x192">
+	<link rel="apple-touch-icon" sizes="196x196" href="images/splash/apple-touch-icon-196x196.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="images/splash/apple-touch-icon-180x180.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="images/splash/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="images/splash/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="images/splash/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="images/splash/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="images/splash/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="images/splash/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="images/splash/apple-touch-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="57x57" href="images/splash/apple-touch-icon-57x57.png">
+	<link rel="icon" type="image/png" href="images/splash/favicon-96x96.png" sizes="96x96">
+	<link rel="icon" type="image/png" href="images/splash/favicon-32x32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="images/splash/favicon-16x16.png" sizes="16x16">
+	<link rel="shortcut icon" href="images/splash/favicon.ico" type="image/x-icon" />
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
 
-<title>Server Status | ClipNuke</title>
+	<title>Server Status | ClipNuke</title>
 
-<link rel="stylesheet" type="text/css" href="styles/style.css">
-<link rel="stylesheet" type="text/css" href="styles/skin.css">
-<link rel="stylesheet" type="text/css" href="styles/framework.css">
-<link rel="stylesheet" type="text/css" href="styles/font-awesome.css">
+	<link rel="stylesheet" type="text/css" href="styles/style.css">
+	<link rel="stylesheet" type="text/css" href="styles/skin.css">
+	<link rel="stylesheet" type="text/css" href="styles/framework.css">
+	<link rel="stylesheet" type="text/css" href="styles/font-awesome.css">
 
-<!-- Insert this line above script imports  -->
-<script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+	<!-- Insert this line above script imports  -->
+	<script>
+		if (typeof module === 'object') {
+			window.module = module;
+			module = undefined;
+		}
+	</script>
 
-<!-- normal script imports etc  -->
-<script
-	src="https://code.jquery.com/jquery-3.4.1.min.js"
-	integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-	crossorigin="anonymous" onload="window.$ = window.jQuery;"></script>
-<script type="text/javascript" src="scripts/plugins.js"></script>
-<script type="text/javascript" src="scripts/custom.js"></script>
-<!-- <script src='../server.js' type='text/javascript'></script> -->
+	<!-- normal script imports etc  -->
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous" onload="window.$ = window.jQuery;"></script>
+	<script type="text/javascript" src="scripts/plugins.js"></script>
+	<script type="text/javascript" src="scripts/custom.js"></script>
+	<!-- <script src='../server.js' type='text/javascript'></script> -->
 
-<!-- Insert this line after script imports -->
-<script>if (window.module) module = window.module;</script>
+	<!-- Insert this line after script imports -->
+	<script>
+		if (window.module) module = window.module;
+	</script>
 </head>
 
 <body>
-<div id="page-transitions">
+	<div id="page-transitions">
 
-<div class="page-preloader page-preloader-light">
-    <div class="loader loader-frames"><i></i><i></i><i></i><i></i></div>
-</div>
+		<div class="page-preloader page-preloader-light">
+			<div class="loader loader-frames"><i></i><i></i><i></i><i></i></div>
+		</div>
 
-<div class="header header-dark header-full">
-    <a href="#" class="header-icon header-icon-1 open-left-sidebar"><i class="fa fa-navicon"></i></a>
-    <a href="index.html" class="header-logo scale-hover"></a>
-    <!-- <a href="#" class="header-icon header-icon-4 open-right-sidebar"><i class="fa fa-envelope-o"></i></a> -->
-</div>
+		<div class="header header-dark header-full">
+			<a href="#" class="header-icon header-icon-1 open-left-sidebar"><i class="fa fa-navicon"></i></a>
+			<a href="index.html" class="header-logo scale-hover"></a>
+			<!-- <a href="#" class="header-icon header-icon-4 open-right-sidebar"><i class="fa fa-envelope-o"></i></a> -->
+		</div>
 
-<div id="page-content" class="page-content header-clear-full">
-    <div id="page-content-scroll">
+		<div id="page-content" class="page-content header-clear-full">
+			<div id="page-content-scroll">
 
-        <div class="heading-strip bg-2">
-            <h3>ClipNuke Server</h3>
-            <p>Information and management console</p>
-            <i class="fa fa-exclamation-circle"></i>
-            <div class="overlay dark-overlay"></div>
-        </div>
-        <div class="decoration decoration-margins"></div>
+				<div class="heading-strip bg-2">
+					<h3>ClipNuke Server</h3>
+					<p>Information and management console</p>
+					<i class="fa fa-exclamation-circle"></i>
+					<div class="overlay dark-overlay"></div>
+				</div>
+				<div class="decoration decoration-margins"></div>
 
-        <div class="content material-full-top full-top">
-            <div class="activity-page">
-                <div class="activity-status">
-                    <i class="fa fa-close bg-red-light" id="clipnuke-status-icon"></i>
-                    <strong id="clipnuke-status">ATTENTION: Required Services Offline</strong>
-                    <em>Updated: 5 Seconds Ago</em>
-                </div>
+				<div class="content material-full-top full-top">
+					<div class="activity-page">
+						<div class="activity-status">
+							<i class="fa fa-close bg-red-light" id="clipnuke-status-icon"></i>
+							<strong id="clipnuke-status">ATTENTION: Required Services Offline</strong>
+							<em>Updated: 5 Seconds Ago</em>
+						</div>
 
-                <div class="activity-item one-half-responsive" id="clipnuke">
-                    <i class="fa fa-circle color-red-light" id="clipnukecom-status"></i>
-                    <strong><a href="https://clipnuke.com" target="_blank">ClipNuke.com</a></strong>
-                    <em>Offline</em>
-                </div>
-                <div class="activity-item one-half-responsive last-column" id="internet">
-                    <i class="fa fa-circle color-red-light" id="internet-status"></i>
-                    <strong>Internet</strong>
-                    <em>Offline</em>
-                </div>
-                <!-- <div class="activity-item one-half-responsive" id="auth-server">
+						<div class="activity-item one-half-responsive" id="clipnuke">
+							<i class="fa fa-circle color-red-light" id="clipnukecom-status"></i>
+							<strong><a href="https://clipnuke.com" target="_blank">ClipNuke.com</a></strong>
+							<em>Offline</em>
+						</div>
+						<div class="activity-item one-half-responsive last-column" id="internet">
+							<i class="fa fa-circle color-red-light" id="internet-status"></i>
+							<strong>Internet</strong>
+							<em>Offline</em>
+						</div>
+						<!-- <div class="activity-item one-half-responsive" id="auth-server">
                     <i class="fa fa-circle color-red-light" id="auth-server-status"></i>
                     <strong>Authentication Server</strong>
                     <em>Offline</em>
                 </div> -->
-                <div class="activity-item one-half-responsive" id="hub">
-                    <i class="fa fa-circle color-red-light" id="hub-status"></i>
-                    <strong>Hub</strong>
-										<span id="hub-ip"><a href="http://localhost:4444/grid/console/" target="_blank" style="font-size: 12px;margin-left: 5px;">View Console</a></span>
-                    <em>Offline</em>
-                </div>
-                <div class="activity-item one-half-responsive last-column" id="clipnuke-nodes">
-                    <i class="fa fa-circle color-red-light" id="clipnuke-nodes-status"></i>
-                    <strong>Nodes</strong>
-										<span id="hub-ip"><a href="#" onclick="require('electron').shell.openItem( path.join(__dirname, '..', '..', '..', 'bin/selenium-node.bat'))" style="font-size: 12px;margin-left: 5px;">Add Node</a></span>
-                    <em>Offline</em>
-                </div>
-                <!-- <div class="activity-item one-half-responsive last-column" id="database-server">
+						<div class="activity-item one-half-responsive" id="hub">
+							<i class="fa fa-circle color-red-light" id="hub-status"></i>
+							<strong>Hub</strong>
+							<span id="hub-ip"><a href="http://localhost:4444/grid/console/" target="_blank" style="font-size: 12px;margin-left: 5px;">View Console</a></span>
+							<em>Offline</em>
+						</div>
+						<div class="activity-item one-half-responsive last-column" id="clipnuke-nodes">
+							<i class="fa fa-circle color-red-light" id="clipnuke-nodes-status"></i>
+							<strong>Nodes</strong>
+							<span id="hub-ip"><a href="#" onclick="require('electron').shell.openItem( path.join(__dirname, '..', '..', '..', 'bin/selenium-node.bat'))" style="font-size: 12px;margin-left: 5px;">Add Node</a></span>
+							<em>Offline</em>
+						</div>
+						<!-- <div class="activity-item one-half-responsive last-column" id="database-server">
                     <i class="fa fa-circle color-red-light"></i>
                     <strong>Database Servers</strong>
                     <em>Offline </em>
                 </div>-->
-                <div class="activity-item one-half-responsive" id="s3-storage">
-                    <i class="fa fa-circle color-red-light" id="s3-storage-status"></i>
-                    <strong>S3 Storage Server</strong>
-                    <em>Offline</em>
-                </div>
-                <!-- <div class="activity-item one-half-responsive last-column" id="nginx-server">
+						<div class="activity-item one-half-responsive" id="s3-storage">
+							<i class="fa fa-circle color-red-light" id="s3-storage-status"></i>
+							<strong>S3 Storage Server</strong>
+							<em>Offline</em>
+						</div>
+						<!-- <div class="activity-item one-half-responsive last-column" id="nginx-server">
                     <i class="fa fa-circle color-red-light"></i>
                     <strong>NGINX Servers</strong>
                     <em>Offline</em>
                 </div>-->
-                <!-- <div class="activity-item one-half-responsive" id="proxy-server">
+						<!-- <div class="activity-item one-half-responsive" id="proxy-server">
                     <i class="fa fa-circle color-red-light"></i>
                     <strong>Proxy Servers</strong>
                     <em>Offline</em>
                 </div> -->
-                <!-- <div class="activity-item one-half-responsive last-column" id="ftp-server">
+						<!-- <div class="activity-item one-half-responsive last-column" id="ftp-server">
                     <i class="fa fa-circle color-red-light" id="ftp-status"></i>
                     <strong>FTP Servers</strong>
                     <em>Offline</em>
                 </div> -->
-                <!-- <div class="activity-item one-half-responsive" id="varnish-server">
+						<!-- <div class="activity-item one-half-responsive" id="varnish-server">
                     <i class="fa fa-circle color-red-light"></i>
                     <strong>Varnish Servers</strong>
                     <em>Offline</em>
                 </div> -->
-                <div class="activity-item one-half-responsive last-column full-bottom" id="adult-content-api">
-                    <i class="fa fa-circle color-red-light" id="adult-content-api-status"></i>
-                    <strong>API</strong>
-                    <em>Offline</em>
-										<i class="fa fa-refresh" aria-hidden="true" onclick="restartApi();"></i>
-                </div>
-                <div class="clear"></div>
+						<div class="activity-item one-half-responsive last-column full-bottom" id="adult-content-api">
+							<i class="fa fa-circle color-red-light" id="adult-content-api-status"></i>
+							<strong>API</strong>
+							<em>Offline</em>
+							<i class="fa fa-refresh" aria-hidden="true" onclick="restartApi();"></i>
+						</div>
+						<div class="clear"></div>
 
-                <div class="activity-incident responsive>
-                    <h3>Adult Content API <i class="fa fa-circle color-blue-dark"></i></h3>
-                    <em>May 9, 2019</em>
-                    <p class="half-bottom">
-                        Read the documentation to learn what RESTful API endpoints are available.
-                    </p>
-                    <strong>Status:<span class="color-blue-dark">Under Development</span></strong>
-                    <a href="#"><i class="fa fa-link"></i> Read More</a>
-                    <div class="clear"></div>
-                </div>
+						<div class="activity-incident responsive>
+                    <h3>Adult Content API <i class=" fa fa-circle color-blue-dark"></i></h3>
+							<em>May 9, 2019</em>
+							<p class="half-bottom">
+								Read the documentation to learn what RESTful API endpoints are available.
+							</p>
+							<strong>Status:<span class="color-blue-dark">Under Development</span></strong>
+							<a href="#"><i class="fa fa-link"></i> Read More</a>
+							<div class="clear"></div>
+						</div>
 
-				<div class="clear"></div>
-                <div class="activity-item responsive" id="c4s-api">
-                    <i class="fa fa-circle color-red-light" id="c4s-status"></i>
-                    <strong>Clips4Sale</strong>
-                    <em>Offline</em>
-                </div>
-                <div class="activity-item responsive" id="xv-api">
-                    <i class="fa fa-circle color-red-light" id="xv-status"></i>
-                    <strong>Xvideos</strong>
-                    <em>Offline</em>
-                </div>
-                <div class="clear"></div>
-                <div class="activity-item responsive" id="woo-api">
-                    <i class="fa fa-circle color-red-light" id="woo-status"></i>
-                    <strong>WooCommerce</strong>
-                    <em>Under Development</em>
-                </div>
-                <div class="activity-item responsive" id="mv-api">
-                    <i class="fa fa-circle color-red-light" id="mv-status"></i>
-                    <strong>ManyVids</strong>
-                    <em>Under Development</em>
-                </div>
-                <div class="activity-item responsive" id="ph-api">
-                    <i class="fa fa-circle color-red-light" id="ph-status"></i>
-                    <strong>PornHub</strong>
-                    <em>Under Development</em>
-                </div>
-                <div class="activity-item responsive" id="mc-api">
-                    <i class="fa fa-circle color-red-light" id="mc-status"></i>
-                    <strong>ModelCentro</strong>
-                    <em>Under Development</em>
-                </div>
-                <div class="activity-item responsive" id="ae-api">
-                    <i class="fa fa-circle color-red-light" id="ae-status"></i>
-                    <strong>AdultEmpire</strong>
-                    <em>Under Development</em>
-                </div>
-                <div class="activity-item responsive" id="aebn-api">
-                    <i class="fa fa-circle color-red-light" id="aebn-status"></i>
-                    <strong>AEBN</strong>
-                    <em>Under Development</em>
-                </div>
-                <div class="activity-item responsive" id="hm-api">
-                    <i class="fa fa-circle color-red-light" id="hm-status"></i>
-                    <strong>Hot Movies</strong>
-                    <em>Under Development</em>
-                </div>
-                <div class="clear"></div>
+						<div class="clear"></div>
+						<div class="activity-item responsive" id="c4s-api">
+							<i class="fa fa-circle color-red-light" id="c4s-status"></i>
+							<strong>Clips4Sale</strong>
+							<em>Offline</em>
+						</div>
+						<div class="activity-item responsive" id="xv-api">
+							<i class="fa fa-circle color-red-light" id="xv-status"></i>
+							<strong>Xvideos</strong>
+							<em>Offline</em>
+						</div>
+						<div class="clear"></div>
+						<div class="activity-item responsive" id="woo-api">
+							<i class="fa fa-circle color-red-light" id="woo-status"></i>
+							<strong>WooCommerce</strong>
+							<em>Under Development</em>
+						</div>
+						<div class="activity-item responsive" id="mv-api">
+							<i class="fa fa-circle color-red-light" id="mv-status"></i>
+							<strong>ManyVids</strong>
+							<em>Under Development</em>
+						</div>
+						<div class="activity-item responsive" id="ph-api">
+							<i class="fa fa-circle color-red-light" id="ph-status"></i>
+							<strong>PornHub</strong>
+							<em>Under Development</em>
+						</div>
+						<div class="activity-item responsive" id="mc-api">
+							<i class="fa fa-circle color-red-light" id="mc-status"></i>
+							<strong>ModelCentro</strong>
+							<em>Under Development</em>
+						</div>
+						<div class="activity-item responsive" id="ae-api">
+							<i class="fa fa-circle color-red-light" id="ae-status"></i>
+							<strong>AdultEmpire</strong>
+							<em>Under Development</em>
+						</div>
+						<div class="activity-item responsive" id="aebn-api">
+							<i class="fa fa-circle color-red-light" id="aebn-status"></i>
+							<strong>AEBN</strong>
+							<em>Under Development</em>
+						</div>
+						<div class="activity-item responsive" id="hm-api">
+							<i class="fa fa-circle color-red-light" id="hm-status"></i>
+							<strong>Hot Movies</strong>
+							<em>Under Development</em>
+						</div>
+						<div class="clear"></div>
 
 
-                <div class="decoration hide-if-responsive"></div>
+						<div class="decoration hide-if-responsive"></div>
 
-<!--                 <div class="activity-incident one-half-responsive last-column">
+						<!--                 <div class="activity-incident one-half-responsive last-column">
                     <h3>Forum Servers <i class="fa fa-circle color-orange-light"></i></h3>
                     <em>May 12, 2021</em>
                     <p class="half-bottom">
@@ -247,730 +252,782 @@
                     <div class="clear"></div>
                 </div> -->
 
-            </div>
-        </div>
+					</div>
+				</div>
 
-        <div class="decoration decoration-margins"></div>
+				<div class="decoration decoration-margins"></div>
 
-        <div class="footer footer-dark">
-            <a href="#" class="footer-logo scale-hover"></a>
-            <p id="footer-tagline">
-                <!-- Weapon of Mass Distribution. -->
-            </p>
-            <div class="footer-socials">
-                <a href="https://facebook.com/clipnuke" target="_blank" class="default-link icon icon-round no-border icon-xs facebook-bg"><i class="fa fa-facebook"></i></a>
-                <a href="https://twitter.com/clipnuke" target="_blank" class="default-link icon icon-round no-border icon-xs twitter-bg"><i class="fa fa-twitter"></i></a>
-                <!--<a href="#" class="default-link icon icon-round no-border icon-xs google-bg"><i class="fa fa-google-plus"></i></a>-->
-                <!--<a href="#" class="default-link icon icon-round no-border icon-xs phone-bg"><i class="fa fa-phone"></i></a>-->
-                <a href="#" class="icon icon-round no-border icon-xs back-to-top bg-night-dark"><i class="fa fa-angle-up"></i></a>
-            </div>
-            <div class="decoration"></div>
-            <p class="copyright-text">Copyright <span id="copyright-year"></span>. <span id="footer-site-name"><!-- ClipNuke --></span>.<br />All Rights Reserved.</p>
-        </div>
+				<div class="footer footer-dark">
+					<a href="#" class="footer-logo scale-hover"></a>
+					<p id="footer-tagline">
+						<!-- Weapon of Mass Distribution. -->
+					</p>
+					<div class="footer-socials">
+						<a href="https://facebook.com/clipnuke" target="_blank" class="default-link icon icon-round no-border icon-xs facebook-bg"><i class="fa fa-facebook"></i></a>
+						<a href="https://twitter.com/clipnuke" target="_blank" class="default-link icon icon-round no-border icon-xs twitter-bg"><i class="fa fa-twitter"></i></a>
+						<!--<a href="#" class="default-link icon icon-round no-border icon-xs google-bg"><i class="fa fa-google-plus"></i></a>-->
+						<!--<a href="#" class="default-link icon icon-round no-border icon-xs phone-bg"><i class="fa fa-phone"></i></a>-->
+						<a href="#" class="icon icon-round no-border icon-xs back-to-top bg-night-dark"><i class="fa fa-angle-up"></i></a>
+					</div>
+					<div class="decoration"></div>
+					<p class="copyright-text">Copyright <span id="copyright-year"></span>. <span id="footer-site-name">
+							<!-- ClipNuke --></span>.<br />All Rights Reserved.</p>
+				</div>
 
-    </div>
-</div>
+			</div>
+		</div>
 
-<div class="sidebar-left sidebar-dark">
-    <div class="sidebar-scroll">
-        <div class="sidebar-header sidebar-header-background">
-            <h1 id="site-name"><!-- ClipNuke --></h1>
-            <h2 id="header-site-tagline"><!-- Weapon of Mass Distribution --></h2>
-            <img class="sidebar-logo-image preload-image" data-original="images/clipnuke-logo.jpg">
-            <div class="sidebar-header-controls">
-                <a href="https://facebook.com/clipnuke" target="_blank"><i class="fa fa-facebook"></i></a>
-                <a href="https://twitter.com/clipnuke" target="_blank"><i class="fa fa-twitter"></i></a>
-                <!--<a href="#"><i class="fa fa-phone"></i></a>-->
-                <a href="mailto:aiden@xxxmultimedia.com"><i class="fa fa-envelope"></i></a>
-                <a href="#" class="close-sidebar"><i class="fa fa-times"></i></a>
-            </div>
-        </div>
-        <div class="sidebar-divider">Navigation</div>
-        <div class="sidebar-menu">
-            <!-- <a class="menu-item" href="index.html">
+		<div class="sidebar-left sidebar-dark">
+			<div class="sidebar-scroll">
+				<div class="sidebar-header sidebar-header-background">
+					<h1 id="site-name">
+						<!-- ClipNuke -->
+					</h1>
+					<h2 id="header-site-tagline">
+						<!-- Weapon of Mass Distribution -->
+					</h2>
+					<img class="sidebar-logo-image preload-image" data-original="images/clipnuke-logo.jpg">
+					<div class="sidebar-header-controls">
+						<a href="https://facebook.com/clipnuke" target="_blank"><i class="fa fa-facebook"></i></a>
+						<a href="https://twitter.com/clipnuke" target="_blank"><i class="fa fa-twitter"></i></a>
+						<!--<a href="#"><i class="fa fa-phone"></i></a>-->
+						<a href="mailto:aiden@xxxmultimedia.com"><i class="fa fa-envelope"></i></a>
+						<a href="#" class="close-sidebar"><i class="fa fa-times"></i></a>
+					</div>
+				</div>
+				<div class="sidebar-divider">Navigation</div>
+				<div class="sidebar-menu">
+					<!-- <a class="menu-item" href="index.html">
                 <i class="bg-red-dark fa fa-star-o"></i>Welcome<i class="fa fa-circle"></i>
             </a> -->
-            <div class="has-submenu">
-                <a class="menu-item open-submenu" href="#"><!-- active-item -->
-                    <i class="bg-green-dark fa fa-home"></i>ClipNuke.com<em class="menu-number">0</em>
-                </a>
-                <div class="submenu"><!--active-submenu-->
-                    <a class="menu-item" href="https://clipnuke.com/login/" target="_blank">
-                        <i class="fa fa-user"></i>Login<i class="fa fa-circle"></i>
-                    </a>
-                </div>
-            </div>
+					<div class="has-submenu">
+						<a class="menu-item open-submenu" href="#">
+							<!-- active-item -->
+							<i class="bg-green-dark fa fa-home"></i>ClipNuke.com<em class="menu-number">0</em>
+						</a>
+						<div class="submenu">
+							<!--active-submenu-->
+							<a class="menu-item" href="https://clipnuke.com/login/" target="_blank">
+								<i class="fa fa-user"></i>Login<i class="fa fa-circle"></i>
+							</a>
+						</div>
+					</div>
 
-            <div class="has-submenu">
-                <a class="menu-item open-submenu" href="#"><!-- active-item -->
-                    <i class="bg-red-dark fa fa-home"></i>Server<em class="menu-number">0</em>
-                </a>
-                <div class="submenu"><!--active-submenu-->
-                    <a class="menu-item" href="#" onclick="require('electron').shell.openItem( path.join(__dirname, '..', '..', '..', 'bin/selenium-hub.bat'))">
-                        <i class="fa fa-code"></i>Launch Hub<i class="fa fa-circle"></i>
-                    </a>
-                    <a class="menu-item"  href="#" onclick="require('electron').shell.openItem( path.join(__dirname, '..', '..', '..', 'bin/selenium-node.bat'))">
-                        <i class="fa fa-th-large"></i>Add a Node<i class="fa fa-circle"></i>
-                    </a>
-                    <a class="menu-item"  href="#" onclick="require('electron').shell.openItem( path.join(__dirname, '..', '..', '..', 'bin/adult-content-api.bat'))">
-                        <i class="fa fa-th"></i>Start API<i class="fa fa-circle"></i>
-                    </a>
-                </div>
-            </div>
+					<div class="has-submenu">
+						<a class="menu-item open-submenu" href="#">
+							<!-- active-item -->
+							<i class="bg-red-dark fa fa-home"></i>Server<em class="menu-number">0</em>
+						</a>
+						<div class="submenu">
+							<!--active-submenu-->
+							<a class="menu-item" href="#" onclick="require('electron').shell.openItem( path.join(__dirname, '..', '..', '..', 'bin/selenium-hub.bat'))">
+								<i class="fa fa-code"></i>Launch Hub<i class="fa fa-circle"></i>
+							</a>
+							<a class="menu-item" href="#" onclick="require('electron').shell.openItem( path.join(__dirname, '..', '..', '..', 'bin/selenium-node.bat'))">
+								<i class="fa fa-th-large"></i>Add a Node<i class="fa fa-circle"></i>
+							</a>
+							<a class="menu-item" href="#" onclick="require('electron').shell.openItem( path.join(__dirname, '..', '..', '..', 'bin/adult-content-api.bat'))">
+								<i class="fa fa-th"></i>Start API<i class="fa fa-circle"></i>
+							</a>
+						</div>
+					</div>
 
-            <div class="has-submenu">
-                <a class="menu-item open-submenu" href="#"><!-- active-item -->
-                    <i class="bg-red-dark fa fa-home"></i>My Account<em class="menu-number">0</em>
-                </a>
-                <div class="submenu"><!--active-submenu-->
-                    <a class="menu-item" href="https://clipnuke.com/my-account/orders/" target="_blank">
-                        <i class="fa fa-user"></i>Orders<i class="fa fa-circle"></i>
-                    </a>
-                    <a class="menu-item" href="https://clipnuke.com/my-account/members-area/" target="_blank">
-                        <i class="fa fa-user"></i>Memberships<i class="fa fa-circle"></i>
-                    </a>
-                    <a class="menu-item" href="https://clipnuke.com/my-account/subscriptions/" target="_blank">
-                        <i class="fa fa-code"></i>Subscriptions<i class="fa fa-circle"></i>
-                    </a>
-                    <a class="menu-item" href="https://clipnuke.com/my-account/downloads/" target="_blank">
-                        <i class="fa fa-th-large"></i>Downloads<i class="fa fa-circle"></i>
-                    </a>
-                    <a class="menu-item" href="https://clipnuke.com/my-account/edit-address/" target="_blank">
-                        <i class="fa fa-th"></i>Addresses<i class="fa fa-circle"></i>
-                    </a>
-                    <a class="menu-item" href="https://clipnuke.com/my-account/edit-account/" target="_blank">
-                        <i class="fa fa-th"></i>Account Details<i class="fa fa-circle"></i>
-                    </a>
-					<a class="menu-item" href="https://clipnuke.com/my-account/customer-logout/" target="_blank">
-                        <i class="fa fa-th"></i>Logout<i class="fa fa-circle"></i>
-                    </a>
-                </div>
-            </div>
+					<div class="has-submenu">
+						<a class="menu-item open-submenu" href="#">
+							<!-- active-item -->
+							<i class="bg-red-dark fa fa-home"></i>My Account<em class="menu-number">0</em>
+						</a>
+						<div class="submenu">
+							<!--active-submenu-->
+							<a class="menu-item" href="https://clipnuke.com/my-account/orders/" target="_blank">
+								<i class="fa fa-user"></i>Orders<i class="fa fa-circle"></i>
+							</a>
+							<a class="menu-item" href="https://clipnuke.com/my-account/members-area/" target="_blank">
+								<i class="fa fa-user"></i>Memberships<i class="fa fa-circle"></i>
+							</a>
+							<a class="menu-item" href="https://clipnuke.com/my-account/subscriptions/" target="_blank">
+								<i class="fa fa-code"></i>Subscriptions<i class="fa fa-circle"></i>
+							</a>
+							<a class="menu-item" href="https://clipnuke.com/my-account/downloads/" target="_blank">
+								<i class="fa fa-th-large"></i>Downloads<i class="fa fa-circle"></i>
+							</a>
+							<a class="menu-item" href="https://clipnuke.com/my-account/edit-address/" target="_blank">
+								<i class="fa fa-th"></i>Addresses<i class="fa fa-circle"></i>
+							</a>
+							<a class="menu-item" href="https://clipnuke.com/my-account/edit-account/" target="_blank">
+								<i class="fa fa-th"></i>Account Details<i class="fa fa-circle"></i>
+							</a>
+							<a class="menu-item" href="https://clipnuke.com/my-account/customer-logout/" target="_blank">
+								<i class="fa fa-th"></i>Logout<i class="fa fa-circle"></i>
+							</a>
+						</div>
+					</div>
 
-            <a class="menu-item" href="https://clipnuke.com/wp-admin/" target="_blank"><!-- active-item -->
-                <i class="bg-night-dark fa fa-dashboard"></i>Dashboard<i class="fa fa-circle"></i>
-            </a>
-            <a class="menu-item" href="https://clipnuke.com/wp-admin/upload.php" target="_blank"><!-- active-item -->
-                <i class="bg-red-dark fa fa-cloud-upload"></i>Uploads<i class="fa fa-circle"></i>
-            </a>
+					<a class="menu-item" href="https://clipnuke.com/wp-admin/" target="_blank">
+						<!-- active-item -->
+						<i class="bg-night-dark fa fa-dashboard"></i>Dashboard<i class="fa fa-circle"></i>
+					</a>
+					<a class="menu-item" href="https://clipnuke.com/wp-admin/upload.php" target="_blank">
+						<!-- active-item -->
+						<i class="bg-red-dark fa fa-cloud-upload"></i>Uploads<i class="fa fa-circle"></i>
+					</a>
 
-            <div class="has-submenu">
-                <a class="menu-item open-submenu" href="#"><!-- active-item -->
-                    <i class="bg-red-dark fa fa-youtube-play"></i>Videos<em class="menu-number">0</em>
-                </a>
-                <div class="submenu"><!--active-submenu-->
-                    <a class="menu-item" href="https://clipnuke.com/wp-admin/edit.php?post_type=product" target="_blank">
-                        <i class="fa fa-youtube-play"></i>All Videos<i class="fa fa-circle"></i>
-                    </a>
-                    <a class="menu-item" href="https://clipnuke.com/wp-admin/post-new.php?post_type=product" target="_blank">
-                        <i class="fa fa-youtube-play"></i>Add Video<i class="fa fa-circle"></i>
-                    </a>
-                    <a class="menu-item" href="https://clipnuke.com/wp-admin/edit.php?post_type=product_variation" target="_blank">
-                        <i class="fa fa-youtube-play"></i>Variations<i class="fa fa-circle"></i>
-                    </a>
-                </div>
-            </div>
+					<div class="has-submenu">
+						<a class="menu-item open-submenu" href="#">
+							<!-- active-item -->
+							<i class="bg-red-dark fa fa-youtube-play"></i>Videos<em class="menu-number">0</em>
+						</a>
+						<div class="submenu">
+							<!--active-submenu-->
+							<a class="menu-item" href="https://clipnuke.com/wp-admin/edit.php?post_type=product" target="_blank">
+								<i class="fa fa-youtube-play"></i>All Videos<i class="fa fa-circle"></i>
+							</a>
+							<a class="menu-item" href="https://clipnuke.com/wp-admin/post-new.php?post_type=product" target="_blank">
+								<i class="fa fa-youtube-play"></i>Add Video<i class="fa fa-circle"></i>
+							</a>
+							<a class="menu-item" href="https://clipnuke.com/wp-admin/edit.php?post_type=product_variation" target="_blank">
+								<i class="fa fa-youtube-play"></i>Variations<i class="fa fa-circle"></i>
+							</a>
+						</div>
+					</div>
 
-            <a class="menu-item" href="https://clipnuke.com/wp-admin/profile.php" target="_blank"><!-- active-item -->
-                <i class="bg-blue-dark fa fa-envelope-o"></i>Profile<i class="fa fa-circle"></i>
-            </a>
-            <a class="close-sidebar menu-item" href="#">
-                <i class="bg-red-dark fa fa-times"></i>Close<i class="fa fa-circle"></i>
-            </a>
-        </div>
-        <div class="sidebar-divider no-bottom">Copyright <span id="copyright-year-sidebar"></span>. All rights Reserved</div>
-    </div>
-</div>
+					<a class="menu-item" href="https://clipnuke.com/wp-admin/profile.php" target="_blank">
+						<!-- active-item -->
+						<i class="bg-blue-dark fa fa-envelope-o"></i>Profile<i class="fa fa-circle"></i>
+					</a>
+					<a class="close-sidebar menu-item" href="#">
+						<i class="bg-red-dark fa fa-times"></i>Close<i class="fa fa-circle"></i>
+					</a>
+				</div>
+				<div class="sidebar-divider no-bottom">Copyright <span id="copyright-year-sidebar"></span>. All rights Reserved</div>
+			</div>
+		</div>
 
-<div class="page-menu dark-footer-menu">
-    <div class="footer-menu-wrapper remove-menu">
-        <div class="footer-menu-scroll">
-            <div class="footer-menu">
-                <a href="page-status.html" class="footer-menu-item active-menu">
-                    <em>System Status</em><i class="scale-hover bg-yellow-light fa fa-info"></i>
-                </a>
-                <a href="page-price-table.html" class="footer-menu-item">
-                    <em>Pricing Table</em><i class="scale-hover bg-orange-dark fa fa-dollar"></i>
-                </a>
-                <a href="page-timeline-2.html" class="footer-menu-item">
-                    <em>Timeline 2</em><i class="scale-hover bg-red-dark fa fa-list"></i>
-                </a>
-                <a href="page-timeline-1.html" class="footer-menu-item">
-                    <em>Timeline 1</em><i class="scale-hover bg-red-light fa fa-list"></i>
-                </a>
-                <a href="page-profile-2.html" class="footer-menu-item">
-                    <em>Profile 2</em><i class="scale-hover bg-magenta-dark fa fa-user"></i>
-                </a>
-                <a href="page-profile-1.html" class="footer-menu-item">
-                    <em>Profile 1</em><i class="scale-hover bg-night-dark fa fa-user"></i>
-                </a>
-                <a href="page-reviews.html" class="footer-menu-item">
-                    <em>Reviews</em><i class="scale-hover bg-night-light fa fa-star-o"></i>
-                </a>
-                <a href="page-register.html" class="footer-menu-item">
-                    <em>Register</em><i class="scale-hover bg-blue-light fa fa-code"></i>
-                </a>
-                <a href="page-login.html" class="footer-menu-item">
-                    <em>Login</em><i class="scale-hover bg-blue-dark fa fa-lock"></i>
-                </a>
-                <a href="page-soon.html" class="footer-menu-item">
-                    <em>Soon</em><i class="scale-hover bg-green-dark fa fa-clock-o"></i>
-                </a>
-                <a href="page-error.html" class="footer-menu-item">
-                    <em>Error</em><i class="scale-hover bg-green-light fa fa-warning"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="footer-menu-controls light-footer-menu">
-    <a href="#" class="footer-menu-open"><i class="fa fa-file-o bg-teal-dark"></i></a>
-    <a href="#" class="footer-menu-close remove-menu"><i class="fa fa-times bg-red-dark"></i><em>Close</em></a>
-</div>
-<div class="footer-menu-tap-close remove-menu"></div>
-<div class="footer-menu-background dark-footer-background remove-menu"></div>
+		<div class="page-menu dark-footer-menu">
+			<div class="footer-menu-wrapper remove-menu">
+				<div class="footer-menu-scroll">
+					<div class="footer-menu">
+						<a href="page-status.html" class="footer-menu-item active-menu">
+							<em>System Status</em><i class="scale-hover bg-yellow-light fa fa-info"></i>
+						</a>
+						<a href="page-price-table.html" class="footer-menu-item">
+							<em>Pricing Table</em><i class="scale-hover bg-orange-dark fa fa-dollar"></i>
+						</a>
+						<a href="page-timeline-2.html" class="footer-menu-item">
+							<em>Timeline 2</em><i class="scale-hover bg-red-dark fa fa-list"></i>
+						</a>
+						<a href="page-timeline-1.html" class="footer-menu-item">
+							<em>Timeline 1</em><i class="scale-hover bg-red-light fa fa-list"></i>
+						</a>
+						<a href="page-profile-2.html" class="footer-menu-item">
+							<em>Profile 2</em><i class="scale-hover bg-magenta-dark fa fa-user"></i>
+						</a>
+						<a href="page-profile-1.html" class="footer-menu-item">
+							<em>Profile 1</em><i class="scale-hover bg-night-dark fa fa-user"></i>
+						</a>
+						<a href="page-reviews.html" class="footer-menu-item">
+							<em>Reviews</em><i class="scale-hover bg-night-light fa fa-star-o"></i>
+						</a>
+						<a href="page-register.html" class="footer-menu-item">
+							<em>Register</em><i class="scale-hover bg-blue-light fa fa-code"></i>
+						</a>
+						<a href="page-login.html" class="footer-menu-item">
+							<em>Login</em><i class="scale-hover bg-blue-dark fa fa-lock"></i>
+						</a>
+						<a href="page-soon.html" class="footer-menu-item">
+							<em>Soon</em><i class="scale-hover bg-green-dark fa fa-clock-o"></i>
+						</a>
+						<a href="page-error.html" class="footer-menu-item">
+							<em>Error</em><i class="scale-hover bg-green-light fa fa-warning"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="footer-menu-controls light-footer-menu">
+			<a href="#" class="footer-menu-open"><i class="fa fa-file-o bg-teal-dark"></i></a>
+			<a href="#" class="footer-menu-close remove-menu"><i class="fa fa-times bg-red-dark"></i><em>Close</em></a>
+		</div>
+		<div class="footer-menu-tap-close remove-menu"></div>
+		<div class="footer-menu-background dark-footer-background remove-menu"></div>
 
-<div class="share-bottom share-dark">
-    <h3>Share Page</h3>
-    <div class="share-socials-bottom">
-        <a href="https://www.facebook.com/sharer/sharer.php?u=http://www.themeforest.net/">
-            <i class="fa fa-facebook facebook-color"></i>
-            Facebook
-        </a>
-        <a href="https://twitter.com/clipnuke.com">
-            <i class="fa fa-twitter twitter-color"></i>
-            Twitter
-        </a>
-        <a href="https://plus.google.com/share?url=http://www.themeforest.net">
-            <i class="fa fa-google-plus google-color"></i>
-            Google
-        </a>
-        <a href="https://pinterest.com/pin/create/button/?url=http://www.themeforest.net/&media=https://0.s3.envato.com/files/63790821/profile-image.jpg&description=Themes%20and%20Templates">
-            <i class="fa fa-pinterest-p pinterest-color"></i>
-            Pinterest
-        </a>
-        <a href="sms:">
-            <i class="fa fa-comment-o sms-color"></i>
-            Text
-        </a>
-        <a href="mailto:clipnuke@gmail.com>
-            <i class="fa fa-envelope-o mail-color"></i>
-            Email
-        </a>
-        <div class="clear"></div>
-    </div>
-</div>
-<div class="sidebar-tap-close"></div>
-<a href="#" class="back-to-top-badge"><i class="fa fa-caret-up"></i>Back to Top</a>
+		<div class="share-bottom share-dark">
+			<h3>Share Page</h3>
+			<div class="share-socials-bottom">
+				<a href="https://www.facebook.com/sharer/sharer.php?u=http://www.themeforest.net/">
+					<i class="fa fa-facebook facebook-color"></i>
+					Facebook
+				</a>
+				<a href="https://twitter.com/clipnuke.com">
+					<i class="fa fa-twitter twitter-color"></i>
+					Twitter
+				</a>
+				<a href="https://plus.google.com/share?url=http://www.themeforest.net">
+					<i class="fa fa-google-plus google-color"></i>
+					Google
+				</a>
+				<a href="https://pinterest.com/pin/create/button/?url=http://www.themeforest.net/&media=https://0.s3.envato.com/files/63790821/profile-image.jpg&description=Themes%20and%20Templates">
+					<i class="fa fa-pinterest-p pinterest-color"></i>
+					Pinterest
+				</a>
+				<a href="sms:">
+					<i class="fa fa-comment-o sms-color"></i>
+					Text
+				</a>
+				<a href="mailto:clipnuke@gmail.com>
+            <i class=" fa fa-envelope-o mail-color"></i>
+					Email
+				</a>
+				<div class="clear"></div>
+			</div>
+		</div>
+		<div class="sidebar-tap-close"></div>
+		<a href="#" class="back-to-top-badge"><i class="fa fa-caret-up"></i>Back to Top</a>
 
-</div>
+	</div>
 </body>
 <!-- Start of electron code -->
 <!-- <script>if (window.module) module = window.module;</script> -->
 <!-- End of electron code -->
 
-<script type = "text/javascript">
- const {remote} = require('electron')
- const { BrowserWindow } = require('electron').remote
- const {Tray, Menu, MenuItem} = remote
- const path = require('path')
+<script type="text/javascript">
+	const {
+		remote
+	} = require('electron')
+	const {
+		BrowserWindow
+	} = require('electron').remote
+	const {
+		Tray,
+		Menu,
+		MenuItem
+	} = remote
+	const path = require('path')
 
- let trayIcon = new Tray(path.join('','icon/clipnuke-logo.jpg'))
+	let trayIcon = new Tray(path.join('', 'icon/clipnuke-logo.jpg'))
 
- const trayMenuTemplate = [
-	{
-	   label: 'Empty Application',
-	   enabled: false
-	},
+	const trayMenuTemplate = [{
+			label: 'Empty Application',
+			enabled: false
+		},
 
-	{
-	   label: 'Login',
-	   click: function () {
-		  console.log("Clicked on login")
-		  let win = new BrowserWindow({ width: 800, height: 600 })
-		  win.loadFile(path.join(__dirname, 'index-login.html')) // Login
-	   }
-	},
+		{
+			label: 'Login',
+			click: function() {
+				console.log("Clicked on login")
+				let win = new BrowserWindow({
+					width: 800,
+					height: 600
+				})
+				win.loadFile(path.join(__dirname, 'index-login.html')) // Login
+			}
+		},
 
-	{
-	   label: 'Dashboard',
-	   click: function () {
-		  console.log("Clicked on dashboard")
-		  let win = new BrowserWindow({ width: 800, height: 600 })
-		  win.loadURL('https://clipnuke.com/wp-admin/index.php') // Login
-	   }
-	},
+		{
+			label: 'Dashboard',
+			click: function() {
+				console.log("Clicked on dashboard")
+				let win = new BrowserWindow({
+					width: 800,
+					height: 600
+				})
+				win.loadURL('https://clipnuke.com/wp-admin/index.php') // Login
+			}
+		},
 
-	{
-	   label: 'Manage Videos',
-	   click: function () {
-		  console.log("Clicked on videos")
-		  let win = new BrowserWindow({ width: 800, height: 600 })
-		  win.loadURL('https://clipnuke.com/wp-admin/edit.php?post_type=product');
-	   }
-	},
+		{
+			label: 'Manage Videos',
+			click: function() {
+				console.log("Clicked on videos")
+				let win = new BrowserWindow({
+					width: 800,
+					height: 600
+				})
+				win.loadURL('https://clipnuke.com/wp-admin/edit.php?post_type=product');
+			}
+		},
 
-	{
-	   label: 'Settings',
-	   click: function () {
-		  console.log("Clicked on settings")
-		  let win = new BrowserWindow({ width: 800, height: 600 })
-		  win.loadFile(path.join(__dirname, 'index-login.html')) // Login
-	   }
-	},
+		{
+			label: 'Settings',
+			click: function() {
+				console.log("Clicked on settings")
+				let win = new BrowserWindow({
+					width: 800,
+					height: 600
+				})
+				win.loadFile(path.join(__dirname, 'index-login.html')) // Login
+			}
+		},
 
-	{
-	   label: 'Help',
-	   click: function () {
-		  console.log("Clicked on Help")
-	   }
-	}
- ]
+		{
+			label: 'Help',
+			click: function() {
+				console.log("Clicked on Help")
+			}
+		}
+	]
 
- let trayMenu = Menu.buildFromTemplate(trayMenuTemplate)
- trayIcon.setContextMenu(trayMenu)
+	let trayMenu = Menu.buildFromTemplate(trayMenuTemplate)
+	trayIcon.setContextMenu(trayMenu)
 </script>
-<script type = "text/javascript">
-// Build a right-click context menu for the page
- const menu = new Menu()
- // menu.append(new MenuItem ({
+<script type="text/javascript">
+	// Build a right-click context menu for the page
+	const menu = new Menu()
+	// menu.append(new MenuItem ({
 	// label: 'MenuItem3',
 	// click() {
 	//    console.log('item 3 clicked')
 	// }
- // }))
- var menuItem = new MenuItem({
-   label: 'Inspect Element',
-   click: () => {
-     remote.getCurrentWindow().inspectElement(rightClickPosition.x, rightClickPosition.y)
-   }
- })
- menu.append(menuItem)
- window.addEventListener('contextmenu', (e) => {
-  e.preventDefault()
-  rightClickPosition = {x: e.x, y: e.y}
-  menu.popup(remote.getCurrentWindow())
-}, false)
+	// }))
+	var menuItem = new MenuItem({
+		label: 'Inspect Element',
+		click: () => {
+			remote.getCurrentWindow().inspectElement(rightClickPosition.x, rightClickPosition.y)
+		}
+	})
+	menu.append(menuItem)
+	window.addEventListener('contextmenu', (e) => {
+		e.preventDefault()
+		rightClickPosition = {
+			x: e.x,
+			y: e.y
+		}
+		menu.popup(remote.getCurrentWindow())
+	}, false)
 
- // Prevent default action of right click in chromium. Replace with our menu.
- window.addEventListener('contextmenu', (e) => {
-	e.preventDefault()
-	menu.popup(remote.getCurrentWindow())
- }, false)
+	// Prevent default action of right click in chromium. Replace with our menu.
+	window.addEventListener('contextmenu', (e) => {
+		e.preventDefault()
+		menu.popup(remote.getCurrentWindow())
+	}, false)
 </script>
 <script type="text/javascript">
-const {getCurrentWindow, globalShortcut} = require('electron').remote;
+	const {
+		getCurrentWindow,
+		globalShortcut
+	} = require('electron').remote;
 
-var reload = ()=>{
-  getCurrentWindow().reload()
-}
+	var reload = () => {
+		getCurrentWindow().reload()
+	}
 
-globalShortcut.register('F5', reload);
-globalShortcut.register('CommandOrControl+R', reload);
-// here is the fix bug #3778, if you know alternative ways, please write them
-window.addEventListener('beforeunload', ()=>{
-  globalShortcut.unregister('F5', reload);
-  globalShortcut.unregister('CommandOrControl+R', reload);
-})
-</script>
-
-<script type="text/javascript">
-const settings = require('electron-settings'); // Load App Settings
-$('#site-name').text(settings.get('app.name'));
-$('#footer-site-name').text(settings.get('app.name'));
-$('#header-site-tagline').text(settings.get('app.tagline'));
-$('#footer-tagline').text(settings.get('app.tagline'));
+	globalShortcut.register('F5', reload);
+	globalShortcut.register('CommandOrControl+R', reload);
+	// here is the fix bug #3778, if you know alternative ways, please write them
+	window.addEventListener('beforeunload', () => {
+		globalShortcut.unregister('F5', reload);
+		globalShortcut.unregister('CommandOrControl+R', reload);
+	})
 </script>
 
 <script type="text/javascript">
-$( document ).ready(function() {
+	const settings = require('electron-settings'); // Load App Settings
+	$('#site-name').text(settings.get('app.name'));
+	$('#footer-site-name').text(settings.get('app.name'));
+	$('#header-site-tagline').text(settings.get('app.tagline'));
+	$('#footer-tagline').text(settings.get('app.tagline'));
+</script>
 
-	// Run functions every few seconds to test ports/internet/services
-	window.setInterval(function(){
-		checkStatus();
-		checkClipnuke();
-		checkClipnukeHub();
-		checkS3();
-		checkWooApi();
-		checkXvApi();
-		checkC4sApi();
-		checkApi();
-		checkInternet();
-		checkPhApi();
-	}, 5000);
+<script type="text/javascript">
+	$(document).ready(function() {
 
-	function checkStatus(){
-		if ($('#clipnuke > em')[0].innerText == "Operational" && $('#internet > em')[0].innerText == "Operational" && $('#hub > em')[0].innerText == "Operational" && $('#clipnuke-nodes-status').hasClass('color-green-dark') && $('#adult-content-api > em')[0].innerText == "Operational") {
-			$('#clipnuke-status')[0].innerText = "All Systems Operational";
-			$('#clipnuke-status-icon').addClass('bg-green-dark');
-			$('#clipnuke-status-icon').removeClass('bg-red-light');
-			$('#clipnuke-status-icon').removeClass('fa-close');
-			$('#clipnuke-status-icon').addClass('fa-check');
+		// Run functions every few seconds to test ports/internet/services
+		window.setInterval(function() {
+			checkStatus();
+			checkClipnuke();
+			checkClipnukeHub();
+			checkS3();
+			checkWooApi();
+			checkXvApi();
+			checkC4sApi();
+			checkApi();
+			checkInternet();
+			checkPhApi();
+		}, 5000);
 
-		} else {
-			$('#clipnuke-status')[0].innerText = "ATTENTION: Required Services Offline";
-			$('#clipnuke-status-icon').removeClass('bg-green-dark');
-			$('#clipnuke-status-icon').addClass('bg-red-light');
-			$('#clipnuke-status-icon').addClass('fa-close');
-			$('#clipnuke-status-icon').removeClass('fa-check');
-		}
-	}
+		function checkStatus() {
+			if ($('#clipnuke > em')[0].innerText == "Operational" && $('#internet > em')[0].innerText == "Operational" && $('#hub > em')[0].innerText == "Operational" && $('#clipnuke-nodes-status').hasClass('color-green-dark') && $(
+					'#adult-content-api > em')[0].innerText == "Operational") {
+				$('#clipnuke-status')[0].innerText = "All Systems Operational";
+				$('#clipnuke-status-icon').addClass('bg-green-dark');
+				$('#clipnuke-status-icon').removeClass('bg-red-light');
+				$('#clipnuke-status-icon').removeClass('fa-close');
+				$('#clipnuke-status-icon').addClass('fa-check');
 
-	/** Test clipnuke and make sure it's online */
-	function checkInternet(){
-		if (navigator.onLine) {
-			console.log('Internet connection detected!');
-			$('#internet-status').addClass('color-green-dark');
-			$('#internet-status').removeClass('color-red-light');
-			$('#internet > em')[0].innerText = "Operational";
-		} else {
-			$('#internet-status').removeClass('color-green-dark');
-			$('#internet-status').addClass('color-red-light');
-			$('#internet > em')[0].innerText = "Offline";
-		}
-	}
-
-	/** Test clipnuke and make sure it's online */
-	function checkClipnuke(){
-		var url = "https://clipnuke.com/wp-json/" ;
-		 $.ajax({
-		     url: url,
-		     type: "get",
-		     cache: false,
-		     crossDomain : true,
-		     asynchronous : false,
-		     jsonpCallback: 'deadCode',
-		     timeout : 10000, // set a timeout in milliseconds
-		     complete : function(xhr, responseText, thrownError) {
-		         if(xhr.status == "200") {
-		            isAccessible = true;
-		            success(); // yes response came, execute success()
-		         }
-		         else {
-		            isAccessible = false;
-		            failure(); // this will be executed after the request gets timed out due to blockage of ports/connections/IPs
-		         }
-		     }
-		});
-		function success(){
-		    console.log('ClipNuke.com is online!');
-		    $('#clipnukecom-status').removeClass('color-red-light');
-		    $('#clipnukecom-status').addClass('color-green-dark');
-		    $('#clipnuke > em')[0].innerText = "Operational";
-		}
-		function failure(){
-			$('#clipnukecom-status').addClass('color-red-light');
-			$('#clipnukecom-status').removeClass('color-green-dark');
-			$('#clipnuke > em')[0].innerText = "Offline";
-		}
-	}
-
-	/** Test clipnuke and make sure it's online */
-	function checkClipnukeHub(){
-		var url = "http://localhost:4444/grid/api/hub" ;
-		$.ajax({
-		    type:"GET",
-		    url: url,
-		    success: function(data) {
-		            console.log(data);
-								success(data); // yes response came, execute success()
-		        },
-		    error: function(jqXHR, textStatus, errorThrown) {
-								failure(); // this will be executed after the request gets timed out due to blockage of ports/connections/IPs
-		            // alert(jqXHR.status);
-		        },
-		   dataType: "json"
-		});
-		function success(data){
-			console.log(data);
-			$('#adult-content-api-status').removeClass('color-red-light');
-			$('#hub-status').removeClass('color-red-light');
-			$('#hub-status').addClass('color-green-dark');
-			$('#hub > em')[0].innerText = "Operational";
-			if (data.slotCounts.free > 0){
-				$('#clipnuke-nodes-status').removeClass('color-red-light');
-				$('#clipnuke-nodes-status').addClass('color-green-dark');
-				$('#clipnuke-nodes > em')[0].innerText = data.slotCounts.free + " Free / " + data.slotCounts.total + " Total";
 			} else {
-				$('#clipnuke-nodes-status').removeClass('color-green-dark');
-				$('#clipnuke-nodes-status').addClass('color-red-light');
-				$('#clipnuke-nodes > em')[0].innerText = data.slotCounts.free + " Free / " + data.slotCounts.total + " Total";
+				$('#clipnuke-status')[0].innerText = "ATTENTION: Required Services Offline";
+				$('#clipnuke-status-icon').removeClass('bg-green-dark');
+				$('#clipnuke-status-icon').addClass('bg-red-light');
+				$('#clipnuke-status-icon').addClass('fa-close');
+				$('#clipnuke-status-icon').removeClass('fa-check');
 			}
 		}
-		function failure(){
-			$('#hub-status').addClass('color-red-light');
-			$('#hub-status').removeClass('color-green-dark');
-			$('#hub > em')[0].innerText = "Offline";
-			$('#clipnuke-nodes-status').removeClass('color-green-dark');
-			$('#clipnuke-nodes-status').addClass('color-red-light');
-			$('#clipnuke-nodes > em')[0].innerText = 0 + " Free / " + 0 + " Total";
+
+		/** Test clipnuke and make sure it's online */
+		function checkInternet() {
+			if (navigator.onLine) {
+				console.log('Internet connection detected!');
+				$('#internet-status').addClass('color-green-dark');
+				$('#internet-status').removeClass('color-red-light');
+				$('#internet > em')[0].innerText = "Operational";
+			} else {
+				$('#internet-status').removeClass('color-green-dark');
+				$('#internet-status').addClass('color-red-light');
+				$('#internet > em')[0].innerText = "Offline";
+			}
 		}
-	}
+
+		/** Test clipnuke and make sure it's online */
+		function checkClipnuke() {
+			var url = "https://clipnuke.com/wp-json/";
+			$.ajax({
+				url: url,
+				type: "get",
+				cache: false,
+				crossDomain: true,
+				asynchronous: false,
+				jsonpCallback: 'deadCode',
+				timeout: 10000, // set a timeout in milliseconds
+				complete: function(xhr, responseText, thrownError) {
+					if (xhr.status == "200") {
+						isAccessible = true;
+						success(); // yes response came, execute success()
+					} else {
+						isAccessible = false;
+						failure(); // this will be executed after the request gets timed out due to blockage of ports/connections/IPs
+					}
+				}
+			});
+
+			function success() {
+				console.log('ClipNuke.com is online!');
+				$('#clipnukecom-status').removeClass('color-red-light');
+				$('#clipnukecom-status').addClass('color-green-dark');
+				$('#clipnuke > em')[0].innerText = "Operational";
+			}
+
+			function failure() {
+				$('#clipnukecom-status').addClass('color-red-light');
+				$('#clipnukecom-status').removeClass('color-green-dark');
+				$('#clipnuke > em')[0].innerText = "Offline";
+			}
+		}
+
+		/** Test clipnuke and make sure it's online */
+		function checkClipnukeHub() {
+			var url = "http://localhost:4444/grid/api/hub";
+			$.ajax({
+				type: "GET",
+				url: url,
+				success: function(data) {
+					console.log(data);
+					success(data); // yes response came, execute success()
+				},
+				error: function(jqXHR, textStatus, errorThrown) {
+					failure(); // this will be executed after the request gets timed out due to blockage of ports/connections/IPs
+					// alert(jqXHR.status);
+				},
+				dataType: "json"
+			});
+
+			function success(data) {
+				console.log(data);
+				$('#adult-content-api-status').removeClass('color-red-light');
+				$('#hub-status').removeClass('color-red-light');
+				$('#hub-status').addClass('color-green-dark');
+				$('#hub > em')[0].innerText = "Operational";
+				if (data.slotCounts.free > 0) {
+					$('#clipnuke-nodes-status').removeClass('color-red-light');
+					$('#clipnuke-nodes-status').addClass('color-green-dark');
+					$('#clipnuke-nodes > em')[0].innerText = data.slotCounts.free + " Free / " + data.slotCounts.total + " Total";
+				} else {
+					$('#clipnuke-nodes-status').removeClass('color-green-dark');
+					$('#clipnuke-nodes-status').addClass('color-red-light');
+					$('#clipnuke-nodes > em')[0].innerText = data.slotCounts.free + " Free / " + data.slotCounts.total + " Total";
+				}
+			}
+
+			function failure() {
+				$('#hub-status').addClass('color-red-light');
+				$('#hub-status').removeClass('color-green-dark');
+				$('#hub > em')[0].innerText = "Offline";
+				$('#clipnuke-nodes-status').removeClass('color-green-dark');
+				$('#clipnuke-nodes-status').addClass('color-red-light');
+				$('#clipnuke-nodes > em')[0].innerText = 0 + " Free / " + 0 + " Total";
+			}
+		}
+
+		/** Test clipnuke and make sure it's online */
+		function checkS3() {
+			var url = "http://s3.xxxmultimedia.com:9000";
+			$.ajax({
+				url: url,
+				type: "get",
+				cache: false,
+				crossDomain: true,
+				asynchronous: false,
+				jsonpCallback: 'deadCode',
+				timeout: 10000, // set a timeout in milliseconds
+				complete: function(xhr, response, thrownError) {
+					if (xhr.status == "403") {
+						isAccessible = true;
+						success(response); // yes response came, execute success()
+					} else {
+						isAccessible = false;
+						failure(); // this will be executed after the request gets timed out due to blockage of ports/connections/IPs
+					}
+				}
+			});
+
+			function success(response) {
+				console.log('S3 Storage Server is online!');
+				$('#s3-storage-status').addClass('color-green-dark');
+				$('#s3-storage-status').removeClass('color-red-light');
+				$('#s3-storage > em')[0].innerText = "Operational";
+			}
+
+			function failure(response) {
+				$('#s3-storage-status').removeClass('color-green-dark');
+				$('#s3-storage-status').addClass('color-red-light');
+				$('#s3-storage > em')[0].innerText = "Offline";
+			}
+		}
+
+		/** Test clipnuke and make sure it's online */
+		function checkApi() {
+			var url = "https://localhost:3000";
+			$.ajax({
+				url: url,
+				type: "get",
+				cache: false,
+				crossDomain: true,
+				asynchronous: false,
+				jsonpCallback: 'deadCode',
+				timeout: 10000, // set a timeout in milliseconds
+				complete: function(xhr, response, thrownError) {
+					if (xhr.status == "404") {
+						isAccessible = true;
+						success(response); // yes response came, execute success()
+					} else {
+						isAccessible = false;
+						failure(); // this will be executed after the request gets timed out due to blockage of ports/connections/IPs
+					}
+				}
+			});
+
+			function success(response) {
+				console.log('Adult Content API is online!');
+				$('#adult-content-api-status').removeClass('color-red-light');
+				$('#adult-content-api-status').addClass('color-green-dark');
+				$('#adult-content-api > em')[0].innerText = "Operational";
+			}
+
+			function failure(response) {
+				$('#adult-content-api-status').addClass('color-red-light');
+				$('#adult-content-api-status').removeClass('color-green-dark');
+				$('#adult-content-api > em')[0].innerText = "Offline";
+			}
+		}
+
+		/** Test clipnuke and make sure it's online */
+		function checkXxxApi() {
+			var url = "https://localhost:3000/woo";
+			$.ajax({
+				url: url,
+				type: "get",
+				cache: false,
+				crossDomain: true,
+				asynchronous: false,
+				jsonpCallback: 'deadCode',
+				timeout: 10000, // set a timeout in milliseconds
+				complete: function(xhr, response, thrownError) {
+					if (xhr.status == "200") {
+						isAccessible = true;
+						success(response); // yes response came, execute success()
+					} else {
+						isAccessible = false;
+						failure(); // this will be executed after the request gets timed out due to blockage of ports/connections/IPs
+					}
+				}
+			});
+
+			function success() {
+				console.log('WooCommerce API is online!');
+				$('#woo-status').addClass('color-green-dark');
+				$('#woo-status').removeClass('color-red-light');
+				$('#woo-api > em')[0].innerText = "Operational";
+			}
+
+			function failure() {
+				$('#woo-status').removeClass('color-green-dark');
+				$('#woo-status').addClass('color-red-light');
+				$('#woo-api > em')[0].innerText = "Offline";
+			}
+		}
+
+		/** Test clipnuke and make sure it's online */
+		function checkXvApi() {
+			var url = "https://localhost:3000/xvideos";
+			$.ajax({
+				url: url,
+				type: "get",
+				cache: false,
+				crossDomain: true,
+				asynchronous: false,
+				jsonpCallback: 'deadCode',
+				timeout: 10000, // set a timeout in milliseconds
+				complete: function(xhr, response, thrownError) {
+					if (xhr.status == "200") {
+						isAccessible = true;
+						success(response); // yes response came, execute success()
+					} else {
+						isAccessible = false;
+						failure(); // this will be executed after the request gets timed out due to blockage of ports/connections/IPs
+					}
+				}
+			});
+
+			function success() {
+				console.log('Xvideos API is online!');
+				$('#xv-status').addClass('color-green-dark');
+				$('#xv-status').removeClass('color-red-light');
+				$('#xv-api > em')[0].innerText = "Operational";
+			}
+
+			function failure() {
+				$('#xv-status').removeClass('color-green-dark');
+				$('#xv-status').addClass('color-red-light');
+				$('#xv-api > em')[0].innerText = "Offline";
+			}
+		}
+
+		/** Test clipnuke and make sure it's online */
+		function checkWooApi() {
+			var url = "https://localhost:3000/woo";
+			$.ajax({
+				url: url,
+				type: "get",
+				cache: false,
+				crossDomain: true,
+				asynchronous: false,
+				jsonpCallback: 'deadCode',
+				timeout: 10000, // set a timeout in milliseconds
+				complete: function(xhr, response, thrownError) {
+					if (xhr.status == "200") {
+						isAccessible = true;
+						success(response); // yes response came, execute success()
+					} else {
+						isAccessible = false;
+						failure(); // this will be executed after the request gets timed out due to blockage of ports/connections/IPs
+					}
+				}
+			});
+
+			function success() {
+				console.log('WooCommerce API is online!');
+				$('#woo-status').addClass('color-green-dark');
+				$('#woo-status').removeClass('color-red-light');
+				$('#woo-api > em')[0].innerText = "Operational";
+			}
+
+			function failure() {
+				$('#woo-status').removeClass('color-green-dark');
+				$('#woo-status').addClass('color-red-light');
+				$('#woo-api > em')[0].innerText = "Offline";
+			}
+		}
+
+		/** Test clipnuke and make sure it's online */
+		function checkC4sApi() {
+			var url = "https://localhost:3000/clips4sale";
+			$.ajax({
+				url: url,
+				type: "get",
+				cache: false,
+				crossDomain: true,
+				asynchronous: false,
+				jsonpCallback: 'deadCode',
+				timeout: 10000, // set a timeout in milliseconds
+				complete: function(xhr, response, thrownError) {
+					if (xhr.status == "200") {
+						isAccessible = true;
+						success(response); // yes response came, execute success()
+					} else {
+						isAccessible = false;
+						failure(); // this will be executed after the request gets timed out due to blockage of ports/connections/IPs
+					}
+				}
+			});
+
+			function success() {
+				console.log('Clips4Sale API is online!');
+				$('#c4s-status').addClass('color-green-dark');
+				$('#c4s-status').removeClass('color-red-light');
+				$('#c4s-api > em')[0].innerText = "Operational";
+			}
+
+			function failure() {
+				$('#c4s-status').removeClass('color-green-dark');
+				$('#c4s-status').addClass('color-red-light');
+				$('#c4s-api > em')[0].innerText = "Offline";
+			}
+		}
+
+		/** Test clipnuke and make sure it's online */
+		function checkPhApi() {
+			var url = "https://localhost:3000/pornhub";
+			$.ajax({
+				url: url,
+				type: "get",
+				cache: false,
+				crossDomain: true,
+				asynchronous: false,
+				jsonpCallback: 'deadCode',
+				timeout: 10000, // set a timeout in milliseconds
+				complete: function(xhr, response, thrownError) {
+					if (xhr.status == "200") {
+						isAccessible = true;
+						success(response); // yes response came, execute success()
+					} else {
+						isAccessible = false;
+						failure(); // this will be executed after the request gets timed out due to blockage of ports/connections/IPs
+					}
+				}
+			});
+
+			function success() {
+				console.log('Pornhub API is online!');
+				$('#ph-status').addClass('color-green-dark');
+				$('#ph-status').removeClass('color-red-light');
+				$('#ph-api > em')[0].innerText = "Operational";
+			}
+
+			function failure() {
+				$('#ph-status').removeClass('color-green-dark');
+				$('#ph-status').addClass('color-red-light');
+				$('#ph-api > em')[0].innerText = "Offline";
+			}
+		}
+	});
 
 	/** Test clipnuke and make sure it's online */
-	function checkS3(){
-		var url = "http://s3.xxxmultimedia.com:9000" ;
-		 $.ajax({
-		     url: url,
-		     type: "get",
-		     cache: false,
-		     crossDomain : true,
-		     asynchronous : false,
-		     jsonpCallback: 'deadCode',
-		     timeout : 10000, // set a timeout in milliseconds
-		     complete : function(xhr, response, thrownError) {
-		         if(xhr.status == "403") {
-		            isAccessible = true;
-		            success(response); // yes response came, execute success()
-		         }
-		         else {
-		            isAccessible = false;
-		            failure(); // this will be executed after the request gets timed out due to blockage of ports/connections/IPs
-		         }
-		     }
+	function restartApi() {
+		var url = "https://localhost:3000/restart/";
+		$.ajax({
+			url: url,
+			type: "get",
+			crossDomain: true,
+			timeout: 1000, // set a timeout in milliseconds
+			complete: function(xhr, responseText, thrownError) {
+				require('electron').shell.openItem(path.join(__dirname, '..', '..', '..', 'bin/adult-content-api.bat'))
+			}
 		});
-		function success(response){
-			console.log('S3 Storage Server is online!');
-			$('#s3-storage-status').addClass('color-green-dark');
-			$('#s3-storage-status').removeClass('color-red-light');
-			$('#s3-storage > em')[0].innerText = "Operational";
-		}
-		function failure(response){
-			$('#s3-storage-status').removeClass('color-green-dark');
-			$('#s3-storage-status').addClass('color-red-light');
-			$('#s3-storage > em')[0].innerText = "Offline";
-		}
 	}
-
-	/** Test clipnuke and make sure it's online */
-	function checkApi(){
-		var url = "https://localhost:3000" ;
-		 $.ajax({
-		     url: url,
-		     type: "get",
-		     cache: false,
-		     crossDomain : true,
-		     asynchronous : false,
-		     jsonpCallback: 'deadCode',
-		     timeout : 10000, // set a timeout in milliseconds
-		     complete : function(xhr, response, thrownError) {
-		         if(xhr.status == "404") {
-		            isAccessible = true;
-		            success(response); // yes response came, execute success()
-		         }
-		         else {
-		            isAccessible = false;
-		            failure(); // this will be executed after the request gets timed out due to blockage of ports/connections/IPs
-		         }
-		     }
-		});
-		function success(response){
-			console.log('Adult Content API is online!');
-			$('#adult-content-api-status').removeClass('color-red-light');
-			$('#adult-content-api-status').addClass('color-green-dark');
-			$('#adult-content-api > em')[0].innerText = "Operational";
-		}
-		function failure(response){
-			$('#adult-content-api-status').addClass('color-red-light');
-			$('#adult-content-api-status').removeClass('color-green-dark');
-			$('#adult-content-api > em')[0].innerText = "Offline";
-		}
-	}
-
-	/** Test clipnuke and make sure it's online */
-	function checkXxxApi(){
-		var url = "https://localhost:3000/woo" ;
-		 $.ajax({
-		     url: url,
-		     type: "get",
-		     cache: false,
-		     crossDomain : true,
-		     asynchronous : false,
-		     jsonpCallback: 'deadCode',
-		     timeout : 10000, // set a timeout in milliseconds
-		     complete : function(xhr, response, thrownError) {
-		         if(xhr.status == "200") {
-		            isAccessible = true;
-		            success(response); // yes response came, execute success()
-		         }
-		         else {
-		            isAccessible = false;
-		            failure(); // this will be executed after the request gets timed out due to blockage of ports/connections/IPs
-		         }
-		     }
-		});
-		function success(){
-			console.log('WooCommerce API is online!');
-			$('#woo-status').addClass('color-green-dark');
-			$('#woo-status').removeClass('color-red-light');
-			$('#woo-api > em')[0].innerText = "Operational";
-		}
-		function failure(){
-			$('#woo-status').removeClass('color-green-dark');
-			$('#woo-status').addClass('color-red-light');
-			$('#woo-api > em')[0].innerText = "Offline";
-		}
-	}
-
-	/** Test clipnuke and make sure it's online */
-	function checkXvApi(){
-		var url = "https://localhost:3000/xvideos" ;
-		 $.ajax({
-		     url: url,
-		     type: "get",
-		     cache: false,
-		     crossDomain : true,
-		     asynchronous : false,
-		     jsonpCallback: 'deadCode',
-		     timeout : 10000, // set a timeout in milliseconds
-		     complete : function(xhr, response, thrownError) {
-		         if(xhr.status == "200") {
-		            isAccessible = true;
-		            success(response); // yes response came, execute success()
-		         }
-		         else {
-		            isAccessible = false;
-		            failure(); // this will be executed after the request gets timed out due to blockage of ports/connections/IPs
-		         }
-		     }
-		});
-		function success(){
-			console.log('Xvideos API is online!');
-			$('#xv-status').addClass('color-green-dark');
-			$('#xv-status').removeClass('color-red-light');
-			$('#xv-api > em')[0].innerText = "Operational";
-		}
-		function failure(){
-			$('#xv-status').removeClass('color-green-dark');
-			$('#xv-status').addClass('color-red-light');
-			$('#xv-api > em')[0].innerText = "Offline";
-		}
-	}
-
-	/** Test clipnuke and make sure it's online */
-	function checkWooApi(){
-		var url = "https://localhost:3000/woo" ;
-		 $.ajax({
-		     url: url,
-		     type: "get",
-		     cache: false,
-		     crossDomain : true,
-		     asynchronous : false,
-		     jsonpCallback: 'deadCode',
-		     timeout : 10000, // set a timeout in milliseconds
-		     complete : function(xhr, response, thrownError) {
-		         if(xhr.status == "200") {
-		            isAccessible = true;
-		            success(response); // yes response came, execute success()
-		         }
-		         else {
-		            isAccessible = false;
-		            failure(); // this will be executed after the request gets timed out due to blockage of ports/connections/IPs
-		         }
-		     }
-		});
-		function success(){
-			console.log('WooCommerce API is online!');
-			$('#woo-status').addClass('color-green-dark');
-			$('#woo-status').removeClass('color-red-light');
-			$('#woo-api > em')[0].innerText = "Operational";
-		}
-		function failure(){
-			$('#woo-status').removeClass('color-green-dark');
-			$('#woo-status').addClass('color-red-light');
-			$('#woo-api > em')[0].innerText = "Offline";
-		}
-	}
-
-	/** Test clipnuke and make sure it's online */
-	function checkC4sApi(){
-		var url = "https://localhost:3000/clips4sale" ;
-		 $.ajax({
-		     url: url,
-		     type: "get",
-		     cache: false,
-		     crossDomain : true,
-		     asynchronous : false,
-		     jsonpCallback: 'deadCode',
-		     timeout : 10000, // set a timeout in milliseconds
-		     complete : function(xhr, response, thrownError) {
-		         if(xhr.status == "200") {
-		            isAccessible = true;
-		            success(response); // yes response came, execute success()
-		         }
-		         else {
-		            isAccessible = false;
-		            failure(); // this will be executed after the request gets timed out due to blockage of ports/connections/IPs
-		         }
-		     }
-		});
-		function success(){
-			console.log('Clips4Sale API is online!');
-			$('#c4s-status').addClass('color-green-dark');
-			$('#c4s-status').removeClass('color-red-light');
-			$('#c4s-api > em')[0].innerText = "Operational";
-		}
-		function failure(){
-			$('#c4s-status').removeClass('color-green-dark');
-			$('#c4s-status').addClass('color-red-light');
-			$('#c4s-api > em')[0].innerText = "Offline";
-		}
-	}
-
-	/** Test clipnuke and make sure it's online */
-	function checkPhApi(){
-		var url = "https://localhost:3000/pornhub" ;
-		 $.ajax({
-		     url: url,
-		     type: "get",
-		     cache: false,
-		     crossDomain : true,
-		     asynchronous : false,
-		     jsonpCallback: 'deadCode',
-		     timeout : 10000, // set a timeout in milliseconds
-		     complete : function(xhr, response, thrownError) {
-		         if(xhr.status == "200") {
-		            isAccessible = true;
-		            success(response); // yes response came, execute success()
-		         }
-		         else {
-		            isAccessible = false;
-		            failure(); // this will be executed after the request gets timed out due to blockage of ports/connections/IPs
-		         }
-		     }
-		});
-		function success(){
-			console.log('Pornhub API is online!');
-			$('#ph-status').addClass('color-green-dark');
-			$('#ph-status').removeClass('color-red-light');
-			$('#ph-api > em')[0].innerText = "Operational";
-		}
-		function failure(){
-			$('#ph-status').removeClass('color-green-dark');
-			$('#ph-status').addClass('color-red-light');
-			$('#ph-api > em')[0].innerText = "Offline";
-		}
-	}
-});
-
-/** Test clipnuke and make sure it's online */
-function restartApi(){
-	var url = "https://localhost:3000/restart/" ;
-    $.ajax({
-			 url: url,
-			 type: "get",
-			 crossDomain : true,
-			 timeout : 1000, // set a timeout in milliseconds
-			 complete : function(xhr, responseText, thrownError) {
-				 require('electron').shell.openItem( path.join(__dirname, '..', '..', '..', 'bin/adult-content-api.bat'))
-			 }
-    });
-}
 </script>
 <script type="text/javascript">
-// Fetch the preferences object
-const preferences = ipcRenderer.sendSync('getPreferences');
+	// Fetch the preferences object
+	const preferences = ipcRenderer.sendSync('getPreferences');
 
-// Display the preferences window
-// ipcRenderer.send('showPreferences');
+	// Display the preferences window
+	// ipcRenderer.send('showPreferences');
 </script>

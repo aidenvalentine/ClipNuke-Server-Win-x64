@@ -7,4 +7,6 @@ const path = require('path');
 const config = require(path.join(__dirname, 'config.js')).config;
 var client = webdriverio.remote(config);
 
-module.exports = { client };
+module.exports = {
+  client
+};

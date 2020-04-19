@@ -1,4 +1,6 @@
-var manyvids = require('express').Router({ mergeParams: true });
+var manyvids = require('express').Router({
+  mergeParams: true
+});
 const path = require('path');
 const spawn = require('child_process').spawn; // TODO Change to fork
 var bodyParser = require('body-parser');
@@ -19,18 +21,20 @@ const conf = require(path.join(process.env.APPDATA, "clipnuke", "config.json"));
  * @type {String}
  */
 manyvids.get('/', (req, res) => {
-  res.status(200).json({ message: 'ManyVids Router!' });
+  res.status(200).json({
+    message: 'ManyVids Router!'
+  });
 });
 
 // route to trigger the capture
-manyvids.get('/vids', function (req, res) {
+manyvids.get('/vids', function(req, res) {
   var id = req.params.id;
   console.log(`GET /vids - Mock Endpoint`); // Mock
   res.json({});
 });
 
 // route to trigger the capture
-manyvids.get('/vids/:id', function (req, res) {
+manyvids.get('/vids/:id', function(req, res) {
   var id = req.params.id;
   console.log(`Requesting Clip ID: ${id}`);
   // res.json({id});
@@ -57,7 +61,7 @@ manyvids.get('/vids/:id', function (req, res) {
 });
 
 // route to trigger the capture
-manyvids.post('/vids', jsonParser, function (req, res) {
+manyvids.post('/vids', jsonParser, function(req, res) {
   const event = req.body;
   const credentials = {
     user: conf.settings.manyvids.user,
@@ -77,11 +81,13 @@ manyvids.post('/vids', jsonParser, function (req, res) {
 
   // mv.login(credentials, params, function(err, data) {
 
-    mv.uploadVid(event, credentials, params, function(err, data) {
-      if (err) { console.log(err); }
-      console.log(data);
-      res.json(data);
-    });
+  mv.uploadVid(event, credentials, params, function(err, data) {
+    if (err) {
+      console.log(err);
+    }
+    console.log(data);
+    res.json(data);
+  });
 
   // });
 
@@ -89,56 +95,60 @@ manyvids.post('/vids', jsonParser, function (req, res) {
 
 manyvids.post('/spawn', jsonParser, (req, res) => {
   const event = req.body;
-	let child = spawn(
-		'node',
-		[
+  let child = spawn(
+    'node',
+    [
       path.join(__dirname, 'postVid.js'),
       JSON.stringify(event)
     ]
-	);
-	child.on('exit', (code) => {
-	    console.log(`Child process exited with code ${code}`);
-      if (code === 0) {
-         res.status(200).json({ message: 'WebDriverIO ran successfully.' });
-      }
-	});
-	child.stdout.on('data', (data) => {
-	    console.log(`stdout: ${data}`);
-			// res.status(200).json(data);
-	});
-	child.stderr.on('data', (data) => {
-	    console.log(`stderr: ${data}`);
-      // res.status(400).json(data);
-	});
+  );
+  child.on('exit', (code) => {
+    console.log(`Child process exited with code ${code}`);
+    if (code === 0) {
+      res.status(200).json({
+        message: 'WebDriverIO ran successfully.'
+      });
+    }
+  });
+  child.stdout.on('data', (data) => {
+    console.log(`stdout: ${data}`);
+    // res.status(200).json(data);
+  });
+  child.stderr.on('data', (data) => {
+    console.log(`stderr: ${data}`);
+    // res.status(400).json(data);
+  });
 });
 
 manyvids.put('/spawn', jsonParser, (req, res) => {
   const event = req.body;
-	let child = spawn(
-		'node',
-		[
+  let child = spawn(
+    'node',
+    [
       path.join(__dirname, 'putVid.js'),
       JSON.stringify(event)
     ]
-	);
-	child.on('exit', (code) => {
-	    console.log(`Child process exited with code ${code}`);
-      if (code === 0) {
-         res.status(200).json({ message: 'WebDriverIO ran successfully.' });
-      }
-	});
-	child.stdout.on('data', (data) => {
-	    console.log(`stdout: ${data}`);
-			// res.status(200).json(data);
-	});
-	child.stderr.on('data', (data) => {
-	    console.log(`stderr: ${data}`);
-      // res.status(400).json(data);
-	});
+  );
+  child.on('exit', (code) => {
+    console.log(`Child process exited with code ${code}`);
+    if (code === 0) {
+      res.status(200).json({
+        message: 'WebDriverIO ran successfully.'
+      });
+    }
+  });
+  child.stdout.on('data', (data) => {
+    console.log(`stdout: ${data}`);
+    // res.status(200).json(data);
+  });
+  child.stderr.on('data', (data) => {
+    console.log(`stderr: ${data}`);
+    // res.status(400).json(data);
+  });
 });
 
 // route to trigger the capture
-manyvids.put('/vids/:id', jsonParser, function (req, res) {
+manyvids.put('/vids/:id', jsonParser, function(req, res) {
   var id = req.params.id;
   console.log(`PUT /vids/${id} - Mock Endpoint`); // Mock
   console.log(req.header('X-Cookie')); // Mock
@@ -169,7 +179,7 @@ manyvids.put('/vids/:id', jsonParser, function (req, res) {
 });
 
 // route to trigger the capture
-manyvids.delete('/vids/:id', function (req, res) {
+manyvids.delete('/vids/:id', function(req, res) {
   var id = req.params.id;
   console.log(`DELETE /vids/${id} - Mock Endpoint`); // Mock
   res.json({});

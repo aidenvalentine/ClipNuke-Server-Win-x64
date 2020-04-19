@@ -18,8 +18,7 @@ autoUpdater.on('update-available', () => {
   }, (buttonIndex) => {
     if (buttonIndex === 0) {
       autoUpdater.downloadUpdate()
-    }
-    else {
+    } else {
       updater.enabled = true
       updater = null
     }
@@ -45,7 +44,7 @@ autoUpdater.on('update-downloaded', () => {
 })
 
 // export this to MenuItem click callback
-function checkForUpdates (menuItem, focusedWindow, event) {
+function checkForUpdates(menuItem, focusedWindow, event) {
   updater = menuItem
   updater.enabled = false
   autoUpdater.checkForUpdates()

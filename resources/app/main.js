@@ -78,18 +78,6 @@ autoUpdater.on('update-downloaded', (ev, info) => {
   }, 5000)
 })
 
-// Start APIs
-// require( path.join( __dirname, "resources/app/server.js" ) )
-// const express = require(path.join( __dirname, "resources/app/server.js" )); //your express app
-/* exec(path.join( __dirname, 'bin/adult-content-api.bat'), (error, stdout, stderr) => {
-  if (error) {
-    console.error(`exec error: ${error}`);
-    return;
-  }
-  console.log(`stdout: ${stdout}`);
-  console.log(`stderr: ${stderr}`);
-}); */
-
 /** SSL/HTTPS */
 app.commandLine.appendSwitch('ignore-certificate-errors', 'true'); // Ignore SSL Errors
 process.env['ELECTRON_DISABLE_SECURITY_WARNINGS'] = 'true';
@@ -127,7 +115,6 @@ function createWindow () {
 	}
 
 	updatesWindow();
-	// autoUpdater.setFeedURL({ provider: 'github', owner: 'aidenvalentine', repo: '', token: '' });
 	autoUpdater.setFeedURL({ provider: 'github', owner: 'aidenvalentine', repo: 'ClipNuke-Server-Win-x64' });
 	autoUpdater.checkForUpdates();
   autoUpdater.checkForUpdatesAndNotify();
@@ -160,20 +147,11 @@ function configWindow () {
 	configWin.loadFile('preferences.html')
 }
 
-/* var hostname = require('dns').lookup(require('os').hostname(), function (err, add, fam) {
-  return add;
-}); */
-
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
 app.on('ready', createWindow, function() {
-	// createPrefs();
-	// express(); // Start server
 	autoUpdater.checkForUpdates();
-
-	// Autoupdater
-  // updatesWindow();
 })
 
 // Quit when all windows are closed.

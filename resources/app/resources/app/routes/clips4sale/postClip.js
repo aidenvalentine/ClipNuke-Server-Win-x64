@@ -9,11 +9,11 @@ const spawn = require('child_process').spawn; // TODO Change to fork
 var config = {
   desiredCapabilities: {
     browserName: 'chrome',
-  	chromeOptions: {
-  		binary: path.join(__dirname, '../../../../bin/chromedriver.exe')
-  	},
+    chromeOptions: {
+      binary: path.join(__dirname, '../../../../bin/chromedriver.exe')
+    },
   },
-  singleton:true, // Enable persistent sessions
+  singleton: true, // Enable persistent sessions
   debug: true,
   // host: "http://127.0.0.1",
   // port: 4444
@@ -29,7 +29,7 @@ var event = JSON.parse(process.argv[2]);
 // ETL
 var tagCount = event.tags.length;
 // Remove . and / from titles per C4S
-var name = event.name.replace('.','').replace('/','');
+var name = event.name.replace('.', '').replace('/', '');
 console.log(`Clean Title: ${name}`);
 var description = `${event.description}`;
 var d = {
@@ -43,17 +43,17 @@ var response = {};
 console.log(event); // Debug
 
 // Set defaults if not set -- so this script doesn't throw exceptions
-if(!event.filename) {
+if (!event.filename) {
   event.filename = '';
 } else {
   event.filename = path.parse(event.filename).base; // Get filename
 }
-if(!event.thumbnailFilename) {
+if (!event.thumbnailFilename) {
   event.thumbnailFilename = -2;
 } else {
   event.thumbnailFilename = path.parse(event.thumbnailFilename).base; // Get filename
 }
-if(!event.trailerFilename) {
+if (!event.trailerFilename) {
   event.trailerFilename = '';
 } else {
   event.trailerFilename = path.parse(event.trailerFilename).base; // Get filename
@@ -65,18 +65,18 @@ client
   .waitForVisible('input#username', 3000)
   .setValue('input#username', conf.settings.clips4sale.user)
   .setValue('input#password', conf.settings.clips4sale.pass).pause(200)
-// .submitForm('input.btn-primary')
+  // .submitForm('input.btn-primary')
   .click('input.btn.btn-primary')
   .setCookie({
-    domain:"admin.clips4sale.com",
-    name:"PHPSESSID",
-    secure:false,
+    domain: "admin.clips4sale.com",
+    name: "PHPSESSID",
+    secure: false,
     value: conf.settings.clips4sale.phpsessid,
     // expiry: seconds+3600 // When the cookie expires, specified in seconds since Unix Epoch
   })
   .pause(1000)
   .url('https://admin.clips4sale.com/clips/index')
-  .execute(function(){
+  .execute(function() {
     // window.addEventListener("beforeunload", function (e) {
     //   var confirmationMessage = "\o/";
     //
@@ -86,16 +86,16 @@ client
   })
   .waitForVisible('input[name="ClipTitle"]', 30000)
   // .setValue('[name="ClipTitle"]', event.name +  map.get(event.flavor))
-  .setValue('input[name="ClipTitle"]', name ).pause(200)
+  .setValue('input[name="ClipTitle"]', name).pause(200)
   .getAttribute('input[name="producer_id"]', 'value').then(function(val) {
     // console.log('category is: ' + JSON.stringify(val));
-    event.producer_id = val*1;
+    event.producer_id = val * 1;
     console.log(event.producer_id);
   })
   /** PRODUCER ID */
   .execute(function(data) {
     var data = {};
-    data.producer_id = $('input[name="producer_id"]')[0].value*1;
+    data.producer_id = $('input[name="producer_id"]')[0].value * 1;
     console.log(data);
     return data;
   }).then(function(data) {
@@ -105,9 +105,11 @@ client
   })
   .execute(function(description) {
     console.log(description);
-  var cleanDesc = description.replace(/kid|xxxmultimedia.com|xxxmultimedia|hooker|teenager|force|forced|forcing|teenie/g,'');
-      // browser context - you may not access client or console
-      tinyMCE.activeEditor.setContent(`${cleanDesc}`, {format: "raw"});
+    var cleanDesc = description.replace(/kid|xxxmultimedia.com|xxxmultimedia|hooker|teenager|force|forced|forcing|teenie/g, '');
+    // browser context - you may not access client or console
+    tinyMCE.activeEditor.setContent(`${cleanDesc}`, {
+      format: "raw"
+    });
   }, description)
   .selectByVisibleText('select#keycat', event.category).catch(function(err) {
     response.err = err;

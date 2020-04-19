@@ -8,11 +8,11 @@ var path = require('path');
 var map = new HashMap();
 map
   .set("HD_MP4", " - Full HD 1080p MP4")
-  .set("SD_MP4"," - SD 480p MP4")
-  .set("HD_WMV"," - Full HD 1080p WMV")
-  .set("SD_WMV"," - SD 480p WMV")
-  .set("MOBILE_HD"," - Mobile hd 720p MP4")
-  .set("MOBILE_LOW"," - Mobile Low MP4");
+  .set("SD_MP4", " - SD 480p MP4")
+  .set("HD_WMV", " - Full HD 1080p WMV")
+  .set("SD_WMV", " - SD 480p WMV")
+  .set("MOBILE_HD", " - Mobile hd 720p MP4")
+  .set("MOBILE_LOW", " - Mobile Low MP4");
 
 /**
  * Login to Clips4Sale.
@@ -39,23 +39,23 @@ function auth(credentials, params, callback) {
     .waitForVisible('input#username', 3000)
     .setValue('input#username', credentials.user)
     .setValue('input#password', credentials.pass).pause(200)
-	// .submitForm('input.btn-primary')
+    // .submitForm('input.btn-primary')
     .click('input.btn.btn-primary')
-  	.setCookie({
-  		domain:"admin.clips4sale.com",
-  		name:"PHPSESSID",
-  		secure:false,
-  		value: credentials.phpsessid,
+    .setCookie({
+      domain: "admin.clips4sale.com",
+      name: "PHPSESSID",
+      secure: false,
+      value: credentials.phpsessid,
       // expiry: seconds+3600 // When the cookie expires, specified in seconds since Unix Epoch
-  	})
+    })
     // .pause(15000) // Wait in case we need to solve a recaptcha.
-/*     .getCookie([{"domain":"admin.clips4sale.com","httpOnly":false,"name":"PHPSESSID","path":"/","secure":false,"value":"jt0p2kiigvqdps9paqn6nqpnm8"}]).then(function(cookie) {
-	  var json = JSON.stringify(cookie);
-      console.log('Cookie is: ' + json);
-	  fs.writeFile('cookie.json', json, 'utf8', callback);
-      return cookie;
-    }) */
-    .next(function (data) {
+    /*     .getCookie([{"domain":"admin.clips4sale.com","httpOnly":false,"name":"PHPSESSID","path":"/","secure":false,"value":"jt0p2kiigvqdps9paqn6nqpnm8"}]).then(function(cookie) {
+    	  var json = JSON.stringify(cookie);
+          console.log('Cookie is: ' + json);
+    	  fs.writeFile('cookie.json', json, 'utf8', callback);
+          return cookie;
+        }) */
+    .next(function(data) {
       console.log(data);
       return callback(null, data);
     }).catch((e) => console.log(e));
@@ -78,202 +78,204 @@ function getClip(id, params, callback) {
   formData.relatedCategories = [];
   formData.tags = [];
   formData.website = "CLIPS4SALE";
-  formData.remoteId = id*1;
+  formData.remoteId = id * 1;
 
   params.client
     // .setCookie(params.cookie)
     .url(`https://admin.clips4sale.com/clips/show/${id}`)
     .waitForVisible('input[name="ClipTitle"]', 90000)
     .execute(function(data) {
-        // Convert the raw HTML from tinyMCE into a JSON friendly version with himalaya
-        data.description = tinyMCE.activeEditor.getContent({format: "raw"});
-        // data.description = tinyMCE.activeEditor.getContent({format: "raw"});
-        return data.description;
+      // Convert the raw HTML from tinyMCE into a JSON friendly version with himalaya
+      data.description = tinyMCE.activeEditor.getContent({
+        format: "raw"
+      });
+      // data.description = tinyMCE.activeEditor.getContent({format: "raw"});
+      return data.description;
     }, data).then(function(data) {
-        // Convert the raw HTML from tinyMCE into a JSON friendly version with himalaya
-        // Then we need to stringify for Graph.cool to escape the quotes
-        /** @todo UPDATE: Okay so apparently JSON.stringify() causes problems when updating a record in Graphcool. So... */
-        // formData.description = himalaya.parse(data.value);
-        formData.description = data.value;
-        // formData.description = JSON.stringify(himalaya.parse(data.value));
+      // Convert the raw HTML from tinyMCE into a JSON friendly version with himalaya
+      // Then we need to stringify for Graph.cool to escape the quotes
+      /** @todo UPDATE: Okay so apparently JSON.stringify() causes problems when updating a record in Graphcool. So... */
+      // formData.description = himalaya.parse(data.value);
+      formData.description = data.value;
+      // formData.description = JSON.stringify(himalaya.parse(data.value));
     })
     .getValue('input[name="ClipTitle"]').then(function(val) {
-        console.log('Title is: ' + JSON.stringify(val));
-        formData.name = val;
+      console.log('Title is: ' + JSON.stringify(val));
+      formData.name = val;
     })
     .getValue('input[name="producer_id"]').then(function(val) {
-        // console.log('Studio ID is: ' + JSON.stringify(val));
-        formData.remoteStudioId = val*1;
+      // console.log('Studio ID is: ' + JSON.stringify(val));
+      formData.remoteStudioId = val * 1;
     })
     .execute(function(data) {
-        data.price = document.frm_upload.clip_price.value;
-        return data.price;
+      data.price = document.frm_upload.clip_price.value;
+      return data.price;
     }, data).then(function(data) {
-        formData.price = data.value*1;
-        // console.log(formData.price);
+      formData.price = data.value * 1;
+      // console.log(formData.price);
     })
     .getAttribute('#select2-keycat-container', 'title').then(function(val) {
-        // console.log('category is: ' + JSON.stringify(val));
-        formData.category = val;
+      // console.log('category is: ' + JSON.stringify(val));
+      formData.category = val;
     })
     .getAttribute('#select2-key1-container', 'title').then(function(val) {
-        // console.log('key1 is: ' + JSON.stringify(val));
-        if(val !== null && val !== '' && val !== 'Select Related Categories') {
-          formData.relatedCategories.push(val);
-        }
+      // console.log('key1 is: ' + JSON.stringify(val));
+      if (val !== null && val !== '' && val !== 'Select Related Categories') {
+        formData.relatedCategories.push(val);
+      }
     })
     .getAttribute('#select2-key2-container', 'title').then(function(val) {
-        // console.log('key2 is: ' + JSON.stringify(val));
-        if(val !== null && val !== '' && val !== 'Select Related Categories') {
-          formData.relatedCategories.push(val);
-        }
+      // console.log('key2 is: ' + JSON.stringify(val));
+      if (val !== null && val !== '' && val !== 'Select Related Categories') {
+        formData.relatedCategories.push(val);
+      }
     })
     .getAttribute('#select2-key3-container', 'title').then(function(val) {
-        // console.log('key3 is: ' + JSON.stringify(val));
-        if(val !== null && val !== '' && val !== 'Select Related Categories') {
-          formData.relatedCategories.push(val);
-        }
+      // console.log('key3 is: ' + JSON.stringify(val));
+      if (val !== null && val !== '' && val !== 'Select Related Categories') {
+        formData.relatedCategories.push(val);
+      }
     })
     .getAttribute('#select2-key4-container', 'title').then(function(val) {
-        // console.log('key4 is: ' + JSON.stringify(val));
-        if(val !== null && val !== '' && val !== 'Select Related Categories') {
-          formData.relatedCategories.push(val);
-        }
+      // console.log('key4 is: ' + JSON.stringify(val));
+      if (val !== null && val !== '' && val !== 'Select Related Categories') {
+        formData.relatedCategories.push(val);
+      }
     })
     .getAttribute('#select2-key5-container', 'title').then(function(val) {
-        // console.log('key5 is: ' + JSON.stringify(val));
-        if(val !== null && val !== '' && val !== 'Select Related Categories') {
-          formData.relatedCategories.push(val);
-        }
+      // console.log('key5 is: ' + JSON.stringify(val));
+      if (val !== null && val !== '' && val !== 'Select Related Categories') {
+        formData.relatedCategories.push(val);
+      }
     })
     .getValue('input[name="keytype[0]"]').then(function(val) {
-        // console.log('Keyword is: ' + JSON.stringify(val));
-        if(val !== null && val !== '') {
-           formData.tags.push(val);
-        }
+      // console.log('Keyword is: ' + JSON.stringify(val));
+      if (val !== null && val !== '') {
+        formData.tags.push(val);
+      }
     })
     .getValue('input[name="keytype[1]"]').then(function(val) {
-        // console.log('Keyword is: ' + JSON.stringify(val));
-        if(val !== null && val !== '') {
-           formData.tags.push(val);
-        }
+      // console.log('Keyword is: ' + JSON.stringify(val));
+      if (val !== null && val !== '') {
+        formData.tags.push(val);
+      }
     })
     .getValue('input[name="keytype[2]"]').then(function(val) {
-        // console.log('Keyword is: ' + JSON.stringify(val));
-        if(val !== null && val !== '') {
-           formData.tags.push(val);
-        }
+      // console.log('Keyword is: ' + JSON.stringify(val));
+      if (val !== null && val !== '') {
+        formData.tags.push(val);
+      }
     })
     .getValue('input[name="keytype[3]"]').then(function(val) {
-        // console.log('Keyword is: ' + JSON.stringify(val));
-        if(val !== null && val !== '') {
-           formData.tags.push(val);
-        }
+      // console.log('Keyword is: ' + JSON.stringify(val));
+      if (val !== null && val !== '') {
+        formData.tags.push(val);
+      }
     })
     .getValue('input[name="keytype[4]"]').then(function(val) {
-        // console.log('Keyword is: ' + JSON.stringify(val));
-        if(val !== null && val !== '') {
-           formData.tags.push(val);
-        }
+      // console.log('Keyword is: ' + JSON.stringify(val));
+      if (val !== null && val !== '') {
+        formData.tags.push(val);
+      }
     })
     .getValue('input[name="keytype[5]"]').then(function(val) {
-        // console.log('Keyword is: ' + JSON.stringify(val));
-        if(val !== null && val !== '') {
-           formData.tags.push(val);
-        }
+      // console.log('Keyword is: ' + JSON.stringify(val));
+      if (val !== null && val !== '') {
+        formData.tags.push(val);
+      }
     })
     .getValue('input[name="keytype[6]"]').then(function(val) {
-        // console.log('Keyword is: ' + JSON.stringify(val));
-        if(val !== null && val !== '') {
-           formData.tags.push(val);
-        }
+      // console.log('Keyword is: ' + JSON.stringify(val));
+      if (val !== null && val !== '') {
+        formData.tags.push(val);
+      }
     })
     .getValue('input[name="keytype[7]"]').then(function(val) {
-        // console.log('Keyword is: ' + JSON.stringify(val));
-        if(val !== null && val !== '') {
-           formData.tags.push(val);
-        }
+      // console.log('Keyword is: ' + JSON.stringify(val));
+      if (val !== null && val !== '') {
+        formData.tags.push(val);
+      }
     })
     .getValue('input[name="keytype[8]"]').then(function(val) {
-        // console.log('Keyword is: ' + JSON.stringify(val));
-        if(val !== null && val !== '') {
-           formData.tags.push(val);
-        }
+      // console.log('Keyword is: ' + JSON.stringify(val));
+      if (val !== null && val !== '') {
+        formData.tags.push(val);
+      }
     })
     .getValue('input[name="keytype[9]"]').then(function(val) {
-        // console.log('Keyword is: ' + JSON.stringify(val));
-        if(val !== null && val !== '') {
-           formData.tags.push(val);
-        }
+      // console.log('Keyword is: ' + JSON.stringify(val));
+      if (val !== null && val !== '') {
+        formData.tags.push(val);
+      }
     })
     .getValue('input[name="keytype[10]"]').then(function(val) {
-        // console.log('Keyword is: ' + JSON.stringify(val));
-        if(val !== null && val !== '') {
-           formData.tags.push(val);
-        }
+      // console.log('Keyword is: ' + JSON.stringify(val));
+      if (val !== null && val !== '') {
+        formData.tags.push(val);
+      }
     })
     .getValue('input[name="keytype[11]"]').then(function(val) {
-        // console.log('Keyword is: ' + JSON.stringify(val));
-        if(val !== null && val !== '') {
-           formData.tags.push(val);
-        }
+      // console.log('Keyword is: ' + JSON.stringify(val));
+      if (val !== null && val !== '') {
+        formData.tags.push(val);
+      }
     })
     .getValue('input[name="keytype[12]"]').then(function(val) {
-        // console.log('Keyword is: ' + JSON.stringify(val));
-        if(val !== null && val !== '') {
-           formData.tags.push(val);
-        }
+      // console.log('Keyword is: ' + JSON.stringify(val));
+      if (val !== null && val !== '') {
+        formData.tags.push(val);
+      }
     })
     .getValue('input[name="keytype[13]"]').then(function(val) {
-        // console.log('Keyword is: ' + JSON.stringify(val));
-        if(val !== null && val !== '') {
-           formData.tags.push(val);
-        }
+      // console.log('Keyword is: ' + JSON.stringify(val));
+      if (val !== null && val !== '') {
+        formData.tags.push(val);
+      }
     })
     .getValue('input[name="keytype[14]"]').then(function(val) {
-        // console.log('Keyword is: ' + JSON.stringify(val));
-        if(val !== null && val !== '') {
-           formData.tags.push(val);
-        }
+      // console.log('Keyword is: ' + JSON.stringify(val));
+      if (val !== null && val !== '') {
+        formData.tags.push(val);
+      }
     })
     .getValue('input[name="DisplayOrder"]').then(function(val) {
-        // console.log('DisplayOrder is: ' + JSON.stringify(val*1));
-        formData.displayOrder = val*1;
+      // console.log('DisplayOrder is: ' + JSON.stringify(val*1));
+      formData.displayOrder = val * 1;
     })
     .getValue('input[name="ClipName"]').then(function(val) {
-        formData.filename = val;
+      formData.filename = val;
     })
     .execute(function(data) {
-        data.thumbnailFilename = $('#imageListDiv > select > option:selected')[0].value;
-        return data.thumbnailFilename;
+      data.thumbnailFilename = $('#imageListDiv > select > option:selected')[0].value;
+      return data.thumbnailFilename;
     }, data).then(function(data) {
-        formData.thumbnailFilename = data.value;
-        // console.log(formData.thumbnailFilename);
+      formData.thumbnailFilename = data.value;
+      // console.log(formData.thumbnailFilename);
     })
     .getValue('input#ClipTime').then(function(val) {
-        formData.lengthMinutes = val*1;
-        // console.log(formData.lengthMinutes);
+      formData.lengthMinutes = val * 1;
+      // console.log(formData.lengthMinutes);
     })
     .getValue('#producerUploadedPreview').then(function(val) {
-        formData.trailerFilename = val;
+      formData.trailerFilename = val;
     })
     .getValue("#fut_month").then(function(val) {
-        dateObj.mm = val;
+      dateObj.mm = val;
     })
     .getValue("#fut_day").then(function(val) {
-        dateObj.dd = val;
+      dateObj.dd = val;
     })
     .getValue("#fut_year").then(function(val) {
-        dateObj.yyyy = val;
+      dateObj.yyyy = val;
     })
     .getValue("#fut_hour").then(function(val) {
-        dateObj.HH = val;
+      dateObj.HH = val;
     })
     .getValue("#fut_minute").then(function(val) {
-        dateObj.MM = val;
-        // console.log(dateObj);
-        // console.log(dateutil.parse(dateObj.yyyy+"-"+dateObj.mm+"-"+dateObj.dd+" "+dateObj.HH+":"+dateObj.MM).toISOString());
-        formData.releaseDate = dateutil.parse(dateObj.yyyy+"-"+dateObj.mm+"-"+dateObj.dd+" "+dateObj.HH+":"+dateObj.MM).toISOString();
+      dateObj.MM = val;
+      // console.log(dateObj);
+      // console.log(dateutil.parse(dateObj.yyyy+"-"+dateObj.mm+"-"+dateObj.dd+" "+dateObj.HH+":"+dateObj.MM).toISOString());
+      formData.releaseDate = dateutil.parse(dateObj.yyyy + "-" + dateObj.mm + "-" + dateObj.dd + " " + dateObj.HH + ":" + dateObj.MM).toISOString();
     })
 
     // Success Callback
@@ -301,34 +303,34 @@ function getClip(id, params, callback) {
  * @return {Object}            [description]
  */
 function postClip(event, params, callback) {
-	var tagCount = event.tags.length;
+  var tagCount = event.tags.length;
 
-	// Remove . and / from titles per C4S
-	var name = event.name.replace('.','').replace('/','');
-	console.log(`Clean Title: ${name}`);
-	var description = `${event.description}`;
-	var d = {
-		mm: dateFormat(event.releaseDate, "mm"),
-		d: dateFormat(event.releaseDate, "d"),
-		yyyy: dateFormat(event.releaseDate, "yyyy"),
-		HH: dateFormat(event.releaseDate, "HH"),
-		MM: dateFormat(event.releaseDate, "MM"),
-	};
+  // Remove . and / from titles per C4S
+  var name = event.name.replace('.', '').replace('/', '');
+  console.log(`Clean Title: ${name}`);
+  var description = `${event.description}`;
+  var d = {
+    mm: dateFormat(event.releaseDate, "mm"),
+    d: dateFormat(event.releaseDate, "d"),
+    yyyy: dateFormat(event.releaseDate, "yyyy"),
+    HH: dateFormat(event.releaseDate, "HH"),
+    MM: dateFormat(event.releaseDate, "MM"),
+  };
   var response = {};
   console.log(event, params); // Debug
 
-  if(!event.thumbnailFilename) {
-	  event.thumbnailFilename = -2;
+  if (!event.thumbnailFilename) {
+    event.thumbnailFilename = -2;
   }
-  if(!event.trailerFilename) {
-	  event.trailerFilename = '';
+  if (!event.trailerFilename) {
+    event.trailerFilename = '';
   }
 
   params.client
     // .init()
     // .setCookie(params.cookie)
     .url('https://admin.clips4sale.com/clips/index')
-    .execute(function(){
+    .execute(function() {
       // window.addEventListener("beforeunload", function (e) {
       //   var confirmationMessage = "\o/";
       //
@@ -338,11 +340,11 @@ function postClip(event, params, callback) {
     })
     .waitForVisible('input[name="ClipTitle"]', 30000)
     // .setValue('[name="ClipTitle"]', event.name +  map.get(event.flavor))
-    .setValue('input[name="ClipTitle"]', name ).pause(200)
-	  .getAttribute('input[name="producer_id"]', 'value').then(function(val) {
+    .setValue('input[name="ClipTitle"]', name).pause(200)
+    .getAttribute('input[name="producer_id"]', 'value').then(function(val) {
       // console.log('category is: ' + JSON.stringify(val));
-      event.producer_id = val*1;
-		  console.log(event.producer_id);
+      event.producer_id = val * 1;
+      console.log(event.producer_id);
     })
 
     /* TRAILERS */
@@ -364,19 +366,21 @@ function postClip(event, params, callback) {
     /** PRODUCER ID */
     .execute(function(data) {
       var data = {};
-      data.producer_id = $('input[name="producer_id"]')[0].value*1;
+      data.producer_id = $('input[name="producer_id"]')[0].value * 1;
       console.log(data);
       return data;
-	  }).then(function(data) {
+    }).then(function(data) {
       event.producer_id = data.producer_id;
       console.log(data.producer_id);
       // event.clip_id = data.clip_id;
     })
     .execute(function(description) {
       console.log(description);
-	  var cleanDesc = description.replace(/kid|hooker|teenager|force|forced|forcing|teenie/g,'');
-        // browser context - you may not access client or console
-        tinyMCE.activeEditor.setContent(`${cleanDesc}`, {format: "raw"});
+      var cleanDesc = description.replace(/kid|hooker|teenager|force|forced|forcing|teenie/g, '');
+      // browser context - you may not access client or console
+      tinyMCE.activeEditor.setContent(`${cleanDesc}`, {
+        format: "raw"
+      });
     }, description)
     // .selectByValue('select#ClipName', path.basename(event.filename) || 'Select File-->').catch(function(err) {
     //   response.err = err;
@@ -386,7 +390,7 @@ function postClip(event, params, callback) {
     //   // return callback(err, response); // Don't send error to clipnuke.com
     // }).pause(1000)
     // .selectByVisibleText('[name="ClipCat"]', event.category)
-	// .selectByValue("[name='fut_month']", dateFormat(event.releaseDate, "mm") || dateFormat(getDate(), "mm")).pause(200)
+    // .selectByValue("[name='fut_month']", dateFormat(event.releaseDate, "mm") || dateFormat(getDate(), "mm")).pause(200)
     .selectByVisibleText('select#keycat', event.category).catch(function(err) {
       response.err = err;
       response.msg = 'Error: Category 1 Not Found.';
@@ -490,84 +494,84 @@ function postClip(event, params, callback) {
     // .setValue('[name="members"]', event.members || 1 )
     // .setValue('[name="ClipActive"]', event.clipActive || 1)
     // .setValue('[name="use_future"]', event.useFuture || 0)
-	// .click('#submitButton')
-	// .pause(2000)
-  // .waitForVisible('#fullwide > div.container-fluid > div.alert.alert-success', 900000).pause(10000)
-  .waitUntil(() => {
+    // .click('#submitButton')
+    // .pause(2000)
+    // .waitForVisible('#fullwide > div.container-fluid > div.alert.alert-success', 900000).pause(10000)
+    .waitUntil(() => {
       return window.location.href.indexOf('?c=') != -1
     }, 900000)
-	// .getValue('input[name="id"]').then(function(val) {
-  //       // console.log('Studio ID is: ' + JSON.stringify(val));
-	// 	console.log(val);
-  //       event.clip_id = val*1;
-  //   })
-  //   .execute(function(event) {
-	// 	var urlParams = new URLSearchParams(window.location.search);
-	// 	var data = {};
-	// 	data.clip_id = urlParams.get('c')*1;
-  //
-	// 	console.log(urlParams.has('c')); // true
-	// 	console.log(urlParams.get('c')); // "edit"
-	// 	return data.clip_id;
-  //   }).then(function(data) {
-  //       event.clip_id = data.value;
-  //       console.log(event.clip_id);
-  //   })
-  //   .click("#c4sTweet").pause(1000)
-  //   .then(function(){
-  //     params.client.end();
-  //   })
-/* 	.waitUntil(function () {
-		console.log(window.clip_id);
-		return window.clip_id == undefined;
-	  // return $( 'input[name="id"]' )[0].value != "";
-	}, 5000, 'Error: waitUntil Clip ID (id) field is visible failed.') */
-/* 	.waitUntil(function() {
-		return params.client.execute(function() {
-			function() {
-				var val =
-				return val;
-			}
-			return window.clip_id != undefined;
-		}).then(function(result) {
-			console.log(result);
-			event.clip_id = result;
-			return result;
-		});
-	}, params) */
-	// .selectByValue('[name="ClipPrice"]', event.price)
-/* 	.waitForVisible('.alert.alert-success', 20000)
-	.execute(function(data) {
-		// event.clip_id = clip_id*1;
-		event.producer_id = $('input[name="producer_id"]')[0].value*1;
-		event.clip_id = $('input[name="clip_id"]')[0].value*1;
-		console.log(JSON.stringify(event, null, 2));
-		return event;
-	}) */
-	// .then(function(data) {
-		// event.clip_id = data.value*1;
-		// console.log(event.clip_id);
-	// })
+    // .getValue('input[name="id"]').then(function(val) {
+    //       // console.log('Studio ID is: ' + JSON.stringify(val));
+    // 	console.log(val);
+    //       event.clip_id = val*1;
+    //   })
+    //   .execute(function(event) {
+    // 	var urlParams = new URLSearchParams(window.location.search);
+    // 	var data = {};
+    // 	data.clip_id = urlParams.get('c')*1;
+    //
+    // 	console.log(urlParams.has('c')); // true
+    // 	console.log(urlParams.get('c')); // "edit"
+    // 	return data.clip_id;
+    //   }).then(function(data) {
+    //       event.clip_id = data.value;
+    //       console.log(event.clip_id);
+    //   })
+    //   .click("#c4sTweet").pause(1000)
+    //   .then(function(){
+    //     params.client.end();
+    //   })
+    /* 	.waitUntil(function () {
+    		console.log(window.clip_id);
+    		return window.clip_id == undefined;
+    	  // return $( 'input[name="id"]' )[0].value != "";
+    	}, 5000, 'Error: waitUntil Clip ID (id) field is visible failed.') */
+    /* 	.waitUntil(function() {
+    		return params.client.execute(function() {
+    			function() {
+    				var val =
+    				return val;
+    			}
+    			return window.clip_id != undefined;
+    		}).then(function(result) {
+    			console.log(result);
+    			event.clip_id = result;
+    			return result;
+    		});
+    	}, params) */
+    // .selectByValue('[name="ClipPrice"]', event.price)
+    /* 	.waitForVisible('.alert.alert-success', 20000)
+    	.execute(function(data) {
+    		// event.clip_id = clip_id*1;
+    		event.producer_id = $('input[name="producer_id"]')[0].value*1;
+    		event.clip_id = $('input[name="clip_id"]')[0].value*1;
+    		console.log(JSON.stringify(event, null, 2));
+    		return event;
+    	}) */
+    // .then(function(data) {
+    // event.clip_id = data.value*1;
+    // console.log(event.clip_id);
+    // })
 
     // Success Callback
     .then(function(data) {
-		console.log(data);
-		params.client
-/* 		.waitForVisible('[name="ClipTitle"]', 3000)
-		.execute(function(data) {
-			data.clip_id = clip_id*1;
-			return data.clip_id;
-		}, data).then(function(data) {
-			event.clip_id = data.value*1;
-			console.log(event.clip_id);
-		})
-		.getValue('[name="id').then(function(val) {
-			console.log('Clip ID: ' + JSON.stringify(val));
-			if(val !== null && val !== '') {
-			   event.clip_id = val;
-			}
-		}) */
-      .end();
+      console.log(data);
+      params.client
+        /* 		.waitForVisible('[name="ClipTitle"]', 3000)
+        		.execute(function(data) {
+        			data.clip_id = clip_id*1;
+        			return data.clip_id;
+        		}, data).then(function(data) {
+        			event.clip_id = data.value*1;
+        			console.log(event.clip_id);
+        		})
+        		.getValue('[name="id').then(function(val) {
+        			console.log('Clip ID: ' + JSON.stringify(val));
+        			if(val !== null && val !== '') {
+        			   event.clip_id = val;
+        			}
+        		}) */
+        .end();
       console.log('Done!');
       console.log(JSON.stringify(event, null, 2));
 

@@ -28,7 +28,7 @@ function postProduct(data, callback) {
     id: 4,
     name: "File Format",
     variation: true,
-    options: ["HD 1080p MP4","3-Day VOD Rental"]
+    options: ["HD 1080p MP4", "3-Day VOD Rental"]
   });
   data.default_attributes = [];
   data.default_attributes.push({
@@ -42,7 +42,7 @@ function postProduct(data, callback) {
   delete data.images; // TEMP. Upload error b/c clipnuke.com isn't on the net.
 
   function removeMeta(obj) {
-    for(prop in obj) {
+    for (prop in obj) {
       if (prop === 'id')
         delete obj[prop];
       else if (typeof obj[prop] === 'object')
@@ -81,7 +81,7 @@ function postProduct(data, callback) {
       });
 
       /** Create Variations */
-      WooCommerce.post("products/"+id+"/variations", variation)
+      WooCommerce.post("products/" + id + "/variations", variation)
         .then((response) => {
           console.log(response.data);
           WooCommerce.post("products", data)
@@ -100,7 +100,7 @@ function postProduct(data, callback) {
               });
 
               /** Create Variations */
-              WooCommerce.post("products/"+id+"/variations", variation)
+              WooCommerce.post("products/" + id + "/variations", variation)
                 .then((response) => {
                   console.log(response.data);
                 })
@@ -134,7 +134,7 @@ function postProduct(data, callback) {
 }
 
 function getProduct(id, callback) {
-  WooCommerce.get("products/"+id)
+  WooCommerce.get("products/" + id)
     .then((response) => {
       console.log(response.data);
       callback(null, response.data);

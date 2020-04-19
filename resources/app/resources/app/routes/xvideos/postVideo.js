@@ -9,11 +9,11 @@ var HashMap = require('hashmap');
 var config = {
   desiredCapabilities: {
     browserName: 'chrome',
-  	chromeOptions: {
-  		binary: path.join(__dirname, '../../../../bin/chromedriver.exe')
-  	},
+    chromeOptions: {
+      binary: path.join(__dirname, '../../../../bin/chromedriver.exe')
+    },
   },
-  singleton:true, // Enable persistent sessions
+  singleton: true, // Enable persistent sessions
   debug: true,
   // host: "http://127.0.0.1",
   // port: 4444
@@ -28,18 +28,18 @@ var event = JSON.parse(process.argv[2]);
 var video_premium = new HashMap();
 video_premium
   .set("Free for All", "upload_form_video_premium_video_premium_centered_zone_all_site")
-  .set("Paying Users","upload_form_video_premium_video_premium_centered_zone_premium");
+  .set("Paying Users", "upload_form_video_premium_video_premium_centered_zone_premium");
 
 var networksites = new HashMap();
 networksites
   .set("Xvideos Only", "upload_form_networksites_networksites_centered_networksites_DEFAULT_ONLY")
-  .set("Xvideos & Network","upload_form_networksites_networksites_centered_networksites_NO_RESTRICTION");
+  .set("Xvideos & Network", "upload_form_networksites_networksites_centered_networksites_NO_RESTRICTION");
 
 var category = new HashMap();
 category
   .set("Straight", "upload_form_category_category_centered_category_straight")
-  .set("Gay","upload_form_category_category_centered_category_gay")
-  .set("Shemale","upload_form_category_category_centered_category_shemale");
+  .set("Gay", "upload_form_category_category_centered_category_gay")
+  .set("Shemale", "upload_form_category_category_centered_category_shemale");
 
 //
 // var size = 0;
@@ -74,16 +74,16 @@ category
 // 	});
 // }).listen(3003);
 
-  // Remove . and / from titles per C4S
-  var name = event.name.replace('.','').replace('/','');
-  console.log(`Clean Title: ${name}`);
-  var description = `${event.description}`;
+// Remove . and / from titles per C4S
+var name = event.name.replace('.', '').replace('/', '');
+console.log(`Clean Title: ${name}`);
+var description = `${event.description}`;
 
-  console.log(event); // Debug
+console.log(event); // Debug
 
-  if (event["video_premium"] == "upload_form_video_premium_video_premium_centered_zone_premium") {
-    params.client.click('#'+event["networksites"]);
-  }
+if (event["video_premium"] == "upload_form_video_premium_video_premium_centered_zone_premium") {
+  params.client.click('#' + event["networksites"]);
+}
 
 /* 		var langCount = event["translations"].length;
   console.log(langCount);
@@ -95,7 +95,7 @@ category
     .setValue('#upload_form_title_translations_title_translations_tr_' + i + '_tr_' + i + '_title', event["translations"][iteration]["xvideosTitle"]).pause(100)
   } */
 
-  client.init()
+client.init()
   .url('https://www.xvideos.com/account')
   .pause(1000)
   // .waitForVisible('form', 3000)
@@ -103,14 +103,14 @@ category
   .setValue('body #signin-form_password', conf.settings.xvideos.pass)
   // .submitForm('body #signin-form')
   .click('#signin-form > div.form-group.form-buttons > div > button')
-	.pause(1000)
+  .pause(1000)
   // .init()
   /* .setCookie(params.cookie) */
   .url('https://www.xvideos.com/account/uploads/new')
   .pause(1000)
-  .click('input#'+event["video_premium"])
-  .click('input#'+event["category"])
-  .click('input#'+event["networksites"])
+  .click('input#' + event["video_premium"])
+  .click('input#' + event["category"])
+  .click('input#' + event["networksites"])
 
   // Title & Description
   .setValue('textarea#upload_form_titledesc_description', event.description.substring(0, 500).replace(/<[^>]*>?/gm, ''))
@@ -305,7 +305,7 @@ category
     console.log(event);
     $('h5 > span.text-success > a.text-success').href;
   }, event)
-  .then(function(){
+  .then(function() {
     params.client.end();
   })
   /** Success Callback */
