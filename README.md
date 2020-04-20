@@ -4,7 +4,7 @@ ClipNuke Server provides adult content creators with a REST API, and framework f
 
 ##### Our mission is to provide a set of API endpoints for third-party clip stores.
 
-For producers and content creators, this project can reduce the amount of copy/pasting by posting any given clip/video to all their distributor's sites. We want to use ONE title, description, images, video files, etc. and cross-post it to every platform you sell content on.
+For producers and content creators, this project can reduce the amount of copy/pasting by posting any given clip/video to all their distributor's sites. We want to use one title, description, images, video files, etc. and cross-post it to every platform we sell content on.
 
 For developers, creating a REST API to third-party clip stores provides the foundation to programmatically accessing these platforms. An application programming interface (API) is a set of protocols for building software apps. It’s important to note from an interface standpoint, an API is software to software – not a UI.
 
