@@ -11,16 +11,6 @@ const salesHelper = require('./salesHelper.js');
 
 const conf = require(path.join(process.env.APPDATA, "clipnuke", "config.json"));
 
-// test data
-// var params = {
-//   s_year: 2018,
-//   s_month: 03,
-//   s_day: 01,
-//   e_year: 2018,
-//   e_month: 03,
-//   e_day: 08,
-// };
-
 // Test Route
 /**
  * [exports description]
@@ -40,8 +30,8 @@ sales.get('/', (req, res) => {
   const client = require('../../../webdriverio/client.js').client;
   const credentials = {
     user: conf.settings.clips4sale.user,
-    pass: conf.settings.clips4sale.user,
-    // phpsessid: req.header('X-Cookie') || process.env.C4S_PHPSESSID || event["credentials"][0]["c4s_phpsessid"]
+    pass: conf.settings.clips4sale.pass,
+    phpsessid: conf.settings.clips4sale.phpsessid
   };
   const params = {
     client: client

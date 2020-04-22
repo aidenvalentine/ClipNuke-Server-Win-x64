@@ -162,28 +162,95 @@ Retrieve sales info from a Clips4Sale store programmatically.
 
 **Method** : `GET`
 
-**Query String** : s_year
+**Query String** : s_year - Start year (YYYY)
 
-**Query String** : s_month
+**Query String** : s_month - Start month (MM)
 
-**Query String** : s_day
+**Query String** : s_day - Start day (DD)
 
-**Query String** : e_year
+**Query String** : e_year - End year (YYYY)
 
-**Query String** : e_month
+**Query String** : e_month - End month (MM)
 
-**Query String** : e_day
+**Query String** : e_day - End day (DD)
 
-**Query String** : report_type (Default: Detail1; Detail1, sum, categoryGroupingReport, ClipsNeverSoldReport, tributes, refundsChargebacks)
+**Query String** : report_type - (Default: Detail1; Detail1, sum, categoryGroupingReport, ClipsNeverSoldReport, tributes, refundsChargebacks)
 
-**Query String** : stores (Default: all; all, clip, video, image)
+**Query String** : stores - (Default: all; all, clip, video, image)
 
-**Query String** : action (Default: reports)
+**Query String** : action - (Default: reports)
+
+**Example** : ```https://localhost:3000/clips4sale/sales?s_year=2019&s_month=1&s_day=1&e_year=2020&e_month=1&e_day=1&report_type=sum&stores=all&action=reports```
 
 ### Success Responses
 
 ```json
+{
+  "data": [
+    {
+      "clipnumber": "<a href=\"http://clips4sale.com/XXXXX/1234567890\" target=\"_blank\">1234567890</a>",
+      "comm": "5.39",
+      "country": "US",
+      "date": "01/01/2019",
+      "detailid": "1234567890",
+      "discount": "No Discount",
+      "name": "A B",
+      "price": "8.99",
+      "sonumber": "12340403",
+      "state": "NV",
+      "title": "My Awesome Movie Title - HD 1080p mp4"
+    }
+  ]
+}
+```
+
+## ManyVids - Upload Vid
+
+Upload a new vid to a ManyVids store programmatically.
+
+**URL** : `/manyvids/vids`
+
+**Method** : `POST`
+
+**Data example**
+
+```json
 {}
+```
+
+## ManyVids - Update Vid
+
+Create a new clip on a Clips4Sale store programmatically.
+
+**URL** : `/manyvids/vids/:id`
+
+**Method** : `PUT`
+
+**Data example** Most fields must be sent.
+
+```json
+{
+  "name": "My Awesome Movie Title",
+  "description": "<p>A girl is at home doing her homework for school and masturbates.</p>",
+  "tags": [
+    "Masturbation",
+    "alt girl",
+    "alternative girl"
+  ],
+  "category": "TRANSFER FETISH",
+  "relatedCategories": [
+    "BALLOONS",
+    "BABYSITTER",
+    "BLOOPERS",
+    "CHEWING"
+  ],
+  "price": 12.99,
+  "filename": "00123-Model-Name-My-Awesome-Movie-Title_hd.mp4",
+  "trailerFilename": "00123-Model-Name-My-Awesome-Movie-Title_preview.mp4",
+  "thumbnailFilename": "00123-Model-Name-My-Awesome-Movie-Title.jpg",
+  "releaseDate": "2020-12-31 12:00:00",
+  "displayOrder": "1"
+}
 ```
 
 ## XVideos - New Clip
