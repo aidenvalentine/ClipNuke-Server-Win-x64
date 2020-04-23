@@ -232,24 +232,21 @@ Create a new clip on a Clips4Sale store programmatically.
 {
   "name": "My Awesome Movie Title",
   "description": "<p>A girl is at home doing her homework for school and masturbates.</p>",
-  "tags": [
-    "Masturbation",
-    "alt girl",
-    "alternative girl"
-  ],
-  "category": "TRANSFER FETISH",
-  "relatedCategories": [
-    "BALLOONS",
-    "BABYSITTER",
-    "BLOOPERS",
-    "CHEWING"
-  ],
   "price": 12.99,
-  "filename": "00123-Model-Name-My-Awesome-Movie-Title_hd.mp4",
-  "trailerFilename": "00123-Model-Name-My-Awesome-Movie-Title_preview.mp4",
-  "thumbnailFilename": "00123-Model-Name-My-Awesome-Movie-Title.jpg",
+  "tube" : false,
+  "free" : false,
+  "categories" : ["123", "34", "456"],
+  "intensity" : 0,
+  "discountPercentage" : "",
+  "exclusive" : false,
+  "age" : false,
+  "ethnicity" : false,
+  "breastSize" : false,
+  "custom" : false,
+  "streamOnly" : 1,
+  "blockPreview" : false,
+  "nsfw" : true,
   "releaseDate": "2020-12-31 12:00:00",
-  "displayOrder": "1"
 }
 ```
 
