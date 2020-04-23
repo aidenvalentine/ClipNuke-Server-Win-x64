@@ -40,8 +40,8 @@ client
       if ($('ul.multi-dropdown-list').length) {
         $('ul.multi-dropdown-list').html(''); // Clear list
       }
-      event.manyvids.categories.forEach(function(value, index){
-        $('ul.multi-dropdown-list').append(`<li><a href="javascript:;" class="remove-tag" title="Remove tag">x</a>CAT# ${value}<input name="tags[]" type="hidden" value="${event.manyvids.categories[index]}"></li>`);
+      event.categories.forEach(function(value, index){
+        $('ul.multi-dropdown-list').append(`<li><a href="javascript:;" class="remove-tag" title="Remove tag">x</a>CAT # ${value}<input name="tags[]" type="hidden" value="${event.manyvids.categories[index]}"></li>`);
       });
 
       // "Set Your Price" - Default
@@ -90,7 +90,7 @@ client
       $("#block_preview").prop("checked", event.blockPreview || false);
 
       // Content Rating
-      if (event.sfw === true) {
+      if (event.sfw === true || event.nsfw === false) {
         $("#safe_for_work").val(1199); // SFW
       } else {
         $("#safe_for_work").val(); // NSFW (Default)
