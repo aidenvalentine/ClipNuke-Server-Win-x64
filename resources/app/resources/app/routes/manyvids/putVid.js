@@ -35,19 +35,34 @@ client
 
       // Teaser
       // Thumbnail
-      // Categories
 
-      // Pricing
+      // Categories
+      if ($('ul.multi-dropdown-list').length) {
+        $('ul.multi-dropdown-list').html(''); // Clear list
+      }
+      event.manyvids.categories.forEach(function(value, index){
+        $('ul.multi-dropdown-list').append(`<li><a href="javascript:;" class="remove-tag" title="Remove tag">x</a>CAT# ${value}<input name="tags[]" type="hidden" value="${event.manyvids.categories[index]}"></li>`);
+      });
+
+      // "Set Your Price" - Default
+      // TODO: Set price by video length
+      $("#free_vid_0").click();
       $('[name="video_cost"]').val(event.price || 9.99);
 
-      $(".radio.my-2").click(); // Make This Vid Free
-      $("#free_vid_1").click(); // MV Tube
+      // "MV Tube"
+      if (event.tube) {
+        $("#free_vid_1").click();
+        $("#appendedPrependedDownloadCost").val(event.price || 4.99); // Download price
+      }
+
+      // "Make This Vid Free"
+      if (event.free) {
+        $("#free_vid_2").click();
+      }
 
       // Intensity
       $('#intensity').val(event.intensity || 0);
       $('#intensity').niceSelect('update');
-
-      // Available on MV
 
       // Discount
       $("#sale").val(event.discountPercentage || "");
@@ -56,14 +71,23 @@ client
       // Exclusive?
       $("#exclusiveVid").prop("checked", event.exclusive || false);
 
-      // Model Attributes - Too damn
+      // Model Attributes
+      $("#age_basic").val(event.age || false);
+      $("#age_basic").niceSelect('update');
+      $("#ethnicity_basic").val(event.ethnicity || false);
+      $("#ethnicity_basic").niceSelect('update');
+      $("#breast_size_basic").val(event.breastSize || false);
+      $("#breast_size_basic").niceSelect('update');
 
       // Custom Vid Order?
-      $("#show_customvid_table").prop("checked", event.exclusive || false);
+      $("#show_customvid_table").prop("checked", event.custom || false);
 
       // Security Options
+      $("#stream_only").val(event.streamOnly || 1);
+      $("#stream_only").niceSelect("update");
 
       // Block Teaser
+      $("#block_preview").prop("checked", event.blockPreview || false);
 
       // Content Rating
       if (event.sfw === true) {
