@@ -51,7 +51,7 @@
     "hashmap": "^2.3.0",
     "ip2proxy-nodejs": "^1.1.0",
     "ipc": "0.0.1",
-    "jquery": "3.4.1",
+    "jquery": "3.5.0",
     "path": "^0.12.7",
     "ping": "^0.2.2",
     "portscanner": "^2.2.0",
