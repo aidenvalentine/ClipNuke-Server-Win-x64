@@ -48,10 +48,11 @@ Make sure nothing else is currently running on the following ports, or some serv
 ## Installation
 
 1.  Clone this repository to your PC.
-2.  Unzip and move/rename the folder to C:/Program Files/ClipNuke
-3.  Open command prompt.
-4.  Change current directory to the program's installation directory. Use command: `cd %ProgramFiles%/ClipNuke`
-5.  Install project dependencies using command: `npm install`.
+1.  Unzip and move/rename the folder to C:/Program Files/ClipNuke
+1.  Open command prompt.
+1.  Change current directory to the program's installation directory. Use command: `cd %ProgramFiles%/ClipNuke`
+1.  Install project dependencies using command: `npm install`.
+1.  After you start the "Adult Content API" service in the ClipNuke app, go to https://localhost:3000/ and whitelist it in your browser. It should say "Your connection is not private" or a similar error. It's safe to ignore this message. This is the API that communicates with the clipnuke.com service.
 
 ## Getting Started
 
