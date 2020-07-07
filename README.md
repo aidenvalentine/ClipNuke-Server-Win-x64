@@ -63,6 +63,20 @@ Make sure nothing else is currently running on the following ports, or some serv
     1.  Start hub (Press F3)
     2.  Add at least one Node (Press F4)
     3.  Start Adult Content API Server (Press F6)
+    
+## TODO
+1. Add interfaces (REST API) for other Clip Sites & Adult Video Platforms.
+    1. OnlyFans
+    1. JustForFans
+    1. ModelCentro
+    1. AEBN
+    1. AdultEmpire
+    1. Hot Movies
+    1. iWantClips
+    1. AP Clips
+    1. AVN Stars
+    1. FanCentro
+    1. SideDaddy
 
 # Clip Store API
 The core of this software is the Clip Store API, which allows us to communicate with external services like Clips4Sale.
