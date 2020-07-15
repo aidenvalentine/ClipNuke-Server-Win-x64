@@ -45,7 +45,7 @@ function updatesWindow() {
   win.on('closed', () => {
     win = null;
   });
-  // win.loadURL(`file://${__dirname}/version.html#v${app.getVersion()}`);
+  win.loadURL(`file://${__dirname}/version.html#v${app.getVersion()}`);
   return win;
 }
 autoUpdater.on('checking-for-update', () => {
@@ -114,7 +114,7 @@ function createWindow () {
 		configWindow();
 	}
 
-	updatesWindow();
+	// updatesWindow(); // Disabled temporarily.
 	autoUpdater.setFeedURL({ provider: 'github', owner: 'aidenvalentine', repo: 'ClipNuke-Server-Win-x64' });
 	autoUpdater.checkForUpdates();
   autoUpdater.checkForUpdatesAndNotify();
