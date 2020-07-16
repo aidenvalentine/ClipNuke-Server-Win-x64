@@ -29,6 +29,12 @@ When you add a new clip to a platform using the REST API, the software:
 
 Some sites, like XVideos support multiple language translations. ClipNuke Server includes a multi-language translator to automatically translate your video titles into any language with a one click. You need to set a Microsoft Azure API Key in the Settings menu to enable this feature.
 
+### Settings
+
+Navigate to the **Help > Settings** in the top menu to open the settings in a new window. These are all the settings you need to make the app work properly with your accounts. This information is securely stored on your PC.
+
+![ClipNuke Settings](https://github.com/aidenvalentine/ClipNuke-Server-Win-x64/raw/master/docs/images/clipnuke-settings.png)
+
 [![](http://img.youtube.com/vi/z71oRkNRAQU/0.jpg)](http://www.youtube.com/watch?v=z71oRkNRAQU "ClipNuke Auto-Translator")
 
 **Note**: Some platforms may be completely automated, while others may require you to manually populate unsupported form fields. The browser window will stay open, awaiting your input if more information is required to post it.
@@ -63,7 +69,7 @@ Make sure nothing else is currently running on the following ports, or some serv
     1.  Start hub (Press F3)
     2.  Add at least one Node (Press F4)
     3.  Start Adult Content API Server (Press F6)
-    
+
 ## TODO
 1. Add interfaces (REST API) for other Clip Sites & Adult Video Platforms.
     1. OnlyFans
@@ -84,7 +90,7 @@ The core of this software is the Clip Store API, which allows us to communicate 
 
 Create a new clip on a Clips4Sale store programmatically.
 
-**URL** : `/clips4sale/spawn`
+**URL** : `https://localhost:3000/clips4sale/spawn`
 
 **Method** : `POST`
 
@@ -119,7 +125,7 @@ Create a new clip on a Clips4Sale store programmatically.
 
 Retrieve a clip's info from a Clips4Sale store programmatically.
 
-**URL** : `/clips4sale/clips/:id`
+**URL** : `https://localhost:3000/clips4sale/clips/:id`
 
 **Method** : `GET`
 
@@ -156,7 +162,7 @@ Retrieve a clip's info from a Clips4Sale store programmatically.
 
 Uploads a file to a Clips4Sale store programmatically.
 
-**URL** : `/clips4sale/ftp`
+**URL** : `https://localhost:3000/clips4sale/ftp`
 
 **Method** : `POST`
 
@@ -223,7 +229,7 @@ Retrieve sales info from a Clips4Sale store programmatically.
 
 Upload a new vid to a ManyVids store programmatically.
 
-**URL** : `/manyvids/vids`
+**URL** : `https://localhost:3000/manyvids/vids`
 
 **Method** : `POST`
 
@@ -237,7 +243,7 @@ Upload a new vid to a ManyVids store programmatically.
 
 Create a new clip on a Clips4Sale store programmatically.
 
-**URL** : `/manyvids/vids/:id`
+**URL** : `https://localhost:3000/manyvids/vids/:id`
 
 **Method** : `PUT`
 
@@ -269,7 +275,7 @@ Create a new clip on a Clips4Sale store programmatically.
 
 Create a new video on an XVideos account programmatically.
 
-**URL** : `/xvideos/spawn`
+**URL** : `https://localhost:3000/xvideos/spawn`
 
 **Method** : `POST`
 
@@ -353,7 +359,7 @@ Create a new video on an XVideos account programmatically.
 
 Create a new product on a WooCommerce site programmatically.
 
-**URL** : `/woo`
+**URL** : `https://localhost:3000/woo`
 
 **Method** : `POST`
 
@@ -411,7 +417,7 @@ Create a new product on a WooCommerce site programmatically.
 
 Retrieve a product's info from a WooCommerce store programmatically.
 
-**URL** : `/woo/:id`
+**URL** : `https://localhost:3000/woo/:id`
 
 **Method** : `GET`
 
@@ -545,7 +551,7 @@ Retrieve a product's info from a WooCommerce store programmatically.
 
 Translates a given string into specified languages and returns the translated strings.
 
-**URL** : `/azure/translate`
+**URL** : `https://localhost:3000/azure/translate`
 
 **Method** : `POST`
 
