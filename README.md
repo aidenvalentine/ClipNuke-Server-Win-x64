@@ -179,7 +179,7 @@ Uploads a file to a Clips4Sale store programmatically.
 
 Retrieve sales info from a Clips4Sale store programmatically.
 
-**URL** : `/clips4sale/sales/`
+**URL** : `https://localhost:3000/clips4sale/sales/`
 
 **Method** : `GET`
 
