@@ -2,6 +2,6 @@ dist\nsis-web\*
 dist\win-unpacked\*
 dist*
 dist\*
-node_modules*
+# node_modules*
 *.log
 .git

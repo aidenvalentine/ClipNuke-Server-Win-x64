@@ -1,0 +1,46 @@
+<!--
+This is the test file that you can open in any modern browser.
+It will use the source ES6 dropzone.js file and test it with the ES6 test.js file.
+
+If you want to test the compiled distribution files, see the documentation in test-prebuilt.html
+-->
+
+<!DOCTYPE html>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../dist/dropzone.css" />
+
+<!-- The actual tests -->
+<script src="../src/dropzone.js"></script>
+
+
+
+
+<form action="/foo" class="dropzone" id="my-dropzone"></form>
+
+
+<script>
+
+Dropzone.options.myDropzone = {
+  init: function() {
+    let myDropzone = this;
+
+    // If you only have access to the original image sizes on your server,
+    // and want to resize them in the browser:
+    let mockFile = { name: "Filename 2", size: 12345 };
+    myDropzone.displayExistingFile(mockFile, "https://i.picsum.photos/id/959/600/600.jpg", null, 'Anonymous');
+
+    // If the thumbnail is already in the right size on your server:
+    let mockFile = { name: "Filename", size: 12345 };
+    let callback = null; // Optional callback when it's done
+    let crossOrigin = null; // Added to the `img` tag for crossOrigin handling
+    let resizeThumbnail = false; // Tells Dropzone whether it should resize the image first
+    myDropzone.displayExistingFile(mockFile, "https://i.picsum.photos/id/959/120/120.jpg", callback, crossOrigin, resizeThumbnail);
+
+    // If you use the maxFiles option, make sure you adjust it to the
+    // correct amount:
+    let fileCountOnServer = 2; // The number of files already uploaded
+    myDropzone.options.maxFiles = myDropzone.options.maxFiles - fileCountOnServer;
+  }
+};
+
+</script>

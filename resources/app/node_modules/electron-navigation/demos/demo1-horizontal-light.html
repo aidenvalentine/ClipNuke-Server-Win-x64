@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DEMO: horizontal-light</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="../themes/material-light.css">
+</head>
+
+<body>
+    <div id="nav-body-ctrls">
+        <!-- address -->
+    </div>
+    <div id="nav-body-tabs">
+        <!-- tabs -->
+    </div>
+    <div id="nav-body-views">
+        <!-- view -->
+    </div>    
+    <script>
+        /* production */
+        // const enav = new (require('electron-navigation'))();
+        
+        /* development */
+        const enav = new (require('../index.js'))();        
+        
+        // create a new tab to www.google.com
+        enav.newTab('google.com');
+    </script>
+</body>
+</html>

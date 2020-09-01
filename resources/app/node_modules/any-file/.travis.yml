@@ -1,0 +1,7 @@
+language: node_js
+node_js:
+  - "5.8.0"
+before_install:
+  - "npm install npm -g"
+before_install:
+  - npm install -g npm
