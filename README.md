@@ -84,6 +84,24 @@ Make sure nothing else is currently running on the following ports, or some serv
     1. FanCentro
     1. SideDaddy
 
+## DEVELOPERS -- Add a New Interface (New Distributor Site)
+The Clip Site API can be run as a standalone ExpressJS program. This is the core API that interacts with every distributor's website and creates HTTP enpoints to programatically create/read/update a producer's data saved to their account. Clip Site API is the heart of our software that can be transplanted in any program and used in your commercial product. It is inside the `/resources/app/resources/app/` folder, it's entrypoint is [server.js](/resources/app/resources/app/server.js). Just save the contents of that folder to your PC and run `node server.js` from the directory in a command prompt/terminal. The existing API endpoints are located in the `/resources/app/resources/app/routes/` dir.
+
+You can add your own distributor's sites and HTTP endpoints to the Clip Site API.
+1. Add the distributor's name to **[/resources/app/resources/app/routes/index.js](/resources/app/resources/app/routes/index.js)**.
+```var adultempire = require('./adultempire');
+/**
+ * Clips4Sale Router
+ * @type {String}
+ */
+router.use('/clips4sale', clips4sale);
+```
+
+2. Create a folder with the distributor's name inside **(/resources/app/resources/app/routes/)[/resources/app/resources/app/routes/]**. Ex. `/resources/app/resources/app/routes/{distributors-name}/`.
+3. Create an `index.js` file inside this dir to [define the HTTP endpoints](/resources/app/resources/app/routes/clips4sale/index.js#L140). Ex. **(/resources/app/resources/app/routes/clips4sale/index.js)[/resources/app/resources/app/routes/clips4sale/index.js]**.
+4. Create a helper file inside this dir to [define the WebDriver code that should run at the endpoints](/resources/app/resources/app/routes/clips4sale/c4sHelper.js#L298) `/resources/app/resources/app/routes/{distributors-name}/{distributors-name}Helper.js`. Ex. **(/app/resources/app/routes/clips4sale/c4sHelper.js)[/app/resources/app/routes/clips4sale/c4sHelper.js]**
+Tip: Use any of our [existing ExpressJS endpoints](/resources/app/resources/app/routes/) as a boilerplate for your new Clip Site API endpoint.
+
 # Clip Store API
 The core of this software is the Clip Store API, which allows us to communicate with external services like Clips4Sale.
 ## Clips4Sale - New Clip
