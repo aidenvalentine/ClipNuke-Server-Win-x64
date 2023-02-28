@@ -29,7 +29,7 @@
     "electron-packager": "^13.1.1",
     "electron-reload": "^1.4.0",
     "electron-windows-store": "^2.1.0",
-    "spectron": "^5.0.0"
+    "spectron": "^19.0.0"
   },
   "dependencies": {
     "@woocommerce/woocommerce-rest-api": "^1.0.1",
