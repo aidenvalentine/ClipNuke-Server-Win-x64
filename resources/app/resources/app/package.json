@@ -36,7 +36,7 @@
     "path": "^0.12.7",
     "request": "^2.88.0",
     "to-unix-timestamp": "^1.0.1",
-    "webdriverio": "^4.14.4",
+    "webdriverio": "^8.4.0",
     "winston": "^2.4.4",
     "winston-express-middleware": "^0.1.0",
     "woocommerce-api": "^1.5.0"
