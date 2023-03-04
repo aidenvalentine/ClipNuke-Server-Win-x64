@@ -17,7 +17,7 @@
     "electron": "^5.0.0",
     "electron-packager": "^13.1.1",
     "electron-reload": "^1.4.0",
-    "spectron": "^5.0.0"
+    "spectron": "^19.0.0"
   },
   "dependencies": {
     "any-file": "0.0.26",
